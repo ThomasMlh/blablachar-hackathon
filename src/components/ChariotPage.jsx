@@ -1,7 +1,7 @@
-import React from 'react';
-import CharriotCard from './components/CharriotCard';
+import React from "react";
+import CharriotCard from "./CharriotCard";
 
-export default function ChariotPage () {
+export default function ChariotPage() {
   return (
     <>
       <CharriotCard />

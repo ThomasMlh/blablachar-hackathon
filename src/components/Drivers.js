@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Component = styled.div`
   background-color: #fbf7ef;
-  font-family: ;
+  padding: 2em 1em;
 `;
 
 const ProfilInfo = styled.div`
@@ -19,13 +19,14 @@ const UserMainInfo = styled.div`
 `;
 
 const UserImg = styled.img`
-  max-width: 15vw;
+  max-width: 20vw;
   height: auto;
+  margin-right: 1em;
 `;
 
 const UserDescr = styled.div`
-  margin-left: 2em;
-  width: 60vw;
+  margin-left: 1em;
+  width: 50vw;
 `;
 
 const UserSecondInfo = styled.div`
@@ -36,13 +37,12 @@ const UserSecondInfo = styled.div`
 
 const BoxPersonality = styled.div`
   margin-right: 1em;
-  width: 15vw;
+  width: 20vw;
 `;
 
 const StyledUl = styled.ul`
   list-style-type: none;
   background-color: #faeed1;
-
   height: 20vh;
   display: flex;
   text-align: center;
@@ -53,19 +53,19 @@ const StyledUl = styled.ul`
 `;
 
 const Description = styled.p`
-  width: 60vw;
+  width: 50vw;
   height: 20vh;
   background-color: #faeed1;
 `;
 
 const TextDescr = styled.p`
   text-align: justify;
-  margin: 0.5em;
+  margin: 0 0.3em;
 `;
 
 const TitleDescr = styled.h4`
   text-align: left;
-  margin-left: 0.5em;
+  margin-left: 0 0.3em;
 `;
 
 const Title = styled.h1`
@@ -74,7 +74,7 @@ const Title = styled.h1`
 
 const Comments = styled.div`
   text-align: justify;
-  margin: 0 2em;
+  margin: 0 5vw;
   width: 80vw;
 `;
 
@@ -85,7 +85,7 @@ const SndTitle = styled.h2`
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 10vw;
+  width: 20vw;
   margin-left: 4em;
 `;
 
@@ -94,9 +94,10 @@ const StyledInput = styled.input`
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   background: #fbf7ef;
-  padding-left: 5px;
   outline: none;
   margin: 1em 0;
+  width: 30vw;
+  padding: 0.5em 0 0.5em 5px;
 `;
 
 const StyledTextarea = styled.textarea`
@@ -104,9 +105,10 @@ const StyledTextarea = styled.textarea`
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   background: #fbf7ef;
-  padding-left: 5px;
+  padding: 0.5em 0 0.5em 5px;
   outline: none;
-  width: 50vw;
+  width: 70vw;
+  height: 10vh;
   resize: none;
 `;
 

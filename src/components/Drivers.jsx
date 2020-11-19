@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Component = styled.div`
   background-color: #fef7e7;
   padding: 2em 1em;
+  font-size: 1.3em;
 `;
 
 const ProfilInfo = styled.div`
@@ -21,6 +22,7 @@ const UserMainInfo = styled.div`
 const UserImg = styled.img`
   width: 25vw;
   height: auto;
+  margin-bottom: 1em;
   @media (max-width: 800px) {
     width: 60vw;
   }
@@ -29,6 +31,13 @@ const UserImg = styled.img`
 const UserDescr = styled.div`
   margin-left: 1em;
   width: 60vw;
+  line-height: 1.6em;
+`;
+
+const DriverName = styled.h1`
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
 `;
 
 const UserSecondInfo = styled.div`
@@ -40,6 +49,7 @@ const UserSecondInfo = styled.div`
 const BoxPersonality = styled.div`
   margin-right: 1em;
   width: 25vw;
+  margin-bottom: 1em;
   @media (max-width: 800px) {
     width: 60vw;
   }
@@ -54,13 +64,15 @@ const StyledUl = styled.ul`
   padding: 0;
   flex-direction: column;
   justify-content: center;
-  line-height: 2em;
+  line-height: 1.5em;
+  color: #553318;
 `;
 
 const Description = styled.p`
   width: 60vw;
   height: 20vh;
   background-color: #faeed1;
+  margin-bottom: 1em;
 `;
 
 const TextDescr = styled.p`
@@ -74,7 +86,9 @@ const TitleDescr = styled.h4`
 `;
 
 const Title = styled.h1`
-  margin-left: 2em;
+  margin: 1em 0 1em 2em;
+  font-weight: bold;
+  font-size: 1.5em;
 `;
 
 const Comments = styled.div`
@@ -83,8 +97,18 @@ const Comments = styled.div`
   width: 80vw;
 `;
 
+const Com = styled.p`
+  margin: 1em 0;
+  font-size: 0.9em;
+  font-style: italic;
+  line-height: 1.2em;
+`;
+
 const SndTitle = styled.h2`
   margin-left: 3em;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2em;
 `;
 
 const StyledForm = styled.form`
@@ -148,7 +172,7 @@ export default function Drivers() {
             alt=""
           />
           <UserDescr>
-            <h1>Chuck Norris</h1>
+            <DriverName>Chuck Norris</DriverName>
             <p>
               Rating : 5.0 <span>&#11088;</span>
             </p>
@@ -177,16 +201,16 @@ export default function Drivers() {
       </ProfilInfo>
       <Title>Comments</Title>
       <Comments>
-        <p>
+        <Com>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua." - TONTON
           TOTO
-        </p>
-        <p>
+        </Com>
+        <Com>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua." - TATA
           YOYO
-        </p>
+        </Com>
       </Comments>
       <div>
         <SndTitle>Leave a comment</SndTitle>

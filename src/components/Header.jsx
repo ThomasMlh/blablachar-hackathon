@@ -47,7 +47,8 @@ color : white;
 
 export const PLogo = styled.p`
 text-align: center;
-font-size: 4vh;
+padding-top: 3vh;
+font-size: 10vh;
 padding-left: 2vh;
 @media ${device.mobile} {
 display: none    }
@@ -76,8 +77,8 @@ export default function Header() {
       <DivLogo>
           <a href="#3"><ImgLogo src="/images/logo.png" alt="logo"/></a>
           <section>
-          <PLogo>Blablachar
-          <PDescription>“The best way to travel around Rome”</PDescription>
+          <PLogo>BlaBlaChar
+          <PDescription>“The best way to travel around Athens”</PDescription>
           </PLogo>
           </section>
       </DivLogo>

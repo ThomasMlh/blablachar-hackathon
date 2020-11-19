@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { Component } from "react";
 
 const Div = styled.div`
   background-color: rgba(239, 220, 190, 0.29);
@@ -68,9 +69,7 @@ const StyledButton = styled.button`
   }
 `;
 
-
-export default function Form() {
-  const place = [];
+const place = [];
   for (let i = 1; i < 6; i += 1) {
     place.push(
       <option value={i * 6} key={i}>
@@ -97,6 +96,12 @@ export default function Form() {
     );
   }
 
+  export default class Form extends Component {
+  constructor(props){
+    super(props);
+  }
+  
+render(){
   return (
     <Div>
       <h1>Post your trip</h1>
@@ -172,4 +177,5 @@ export default function Form() {
       </div>
     </Div>
   );
+}
 }

@@ -21,6 +21,7 @@ height: 20vh;`
 
 export const A = styled.a`
 text-decoration: none;
+padding-right: 3vw;
 color : white;
 &:hover{
     color:black;
@@ -60,6 +61,7 @@ export default function Header() {
       </DivLogo>
       <A href="#1">Trajets</A>
       <A href="#2">Poster un trajet</A>
+      <A href="#3">Les chars</A>
       
         
   </DivHeader>

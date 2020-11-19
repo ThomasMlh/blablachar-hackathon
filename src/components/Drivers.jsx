@@ -31,7 +31,7 @@ const UserImg = styled.img`
 const UserDescr = styled.div`
   margin-left: 1em;
   width: 60vw;
-  line-height: 1.6em;
+  line-height: 2em;
 `;
 
 const DriverName = styled.h1`

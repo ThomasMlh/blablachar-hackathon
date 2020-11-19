@@ -19,8 +19,11 @@ const UserMainInfo = styled.div`
 `;
 
 const UserImg = styled.img`
-  max-width: 25vw;
+  width: 25vw;
   height: auto;
+  @media (max-width: 800px) {
+    width: 60vw;
+  }
 `;
 
 const UserDescr = styled.div`
@@ -37,6 +40,9 @@ const UserSecondInfo = styled.div`
 const BoxPersonality = styled.div`
   margin-right: 1em;
   width: 25vw;
+  @media (max-width: 800px) {
+    width: 60vw;
+  }
 `;
 
 const StyledUl = styled.ul`

@@ -1,10 +1,11 @@
 import './App.css';
-import CharriotCard from './components/CharriotCard';
+import CharriotPage from './components/CharriotCard';
 
 function App() {
   return (
     <div>
-      <CharriotCard />
+      <CharriotPage />
+      <CharriotPage />
     </div>
   );
 }

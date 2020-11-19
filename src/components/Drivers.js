@@ -49,7 +49,7 @@ const StyledUl = styled.ul`
   padding: 0;
   flex-direction: column;
   justify-content: center;
-  line-height: 1.4em;
+  line-height: 2em;
 `;
 
 const Description = styled.p`
@@ -60,12 +60,12 @@ const Description = styled.p`
 
 const TextDescr = styled.p`
   text-align: justify;
-  margin: 0 0.3em;
+  margin: 1em 1em 0 1em;
 `;
 
 const TitleDescr = styled.h4`
   text-align: left;
-  margin-left: 0 0.3em;
+  margin: 1em 0.5em 0 1em;
 `;
 
 const Title = styled.h1`

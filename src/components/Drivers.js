@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Component = styled.div`
   background-color: #fbf7ef;
+  font-family: ;
 `;
 
 const ProfilInfo = styled.div`
@@ -18,7 +19,8 @@ const UserMainInfo = styled.div`
 `;
 
 const UserImg = styled.img`
-  width: 20vw;
+  max-width: 15vw;
+  height: auto;
 `;
 
 const UserDescr = styled.div`
@@ -32,17 +34,25 @@ const UserSecondInfo = styled.div`
   justify-content: center;
 `;
 
-const BoxPersonality = styled.div``;
+const BoxPersonality = styled.div`
+  margin-right: 1em;
+  width: 15vw;
+`;
 
 const StyledUl = styled.ul`
   list-style-type: none;
   background-color: #faeed1;
-  text-align: center;
-  width: 20vw;
+
   height: 20vh;
+  display: flex;
+  text-align: center;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.4em;
 `;
 
-const Description = styled.ul`
+const Description = styled.p`
   width: 60vw;
   height: 20vh;
   background-color: #faeed1;
@@ -53,7 +63,7 @@ const TextDescr = styled.p`
   margin: 0.5em;
 `;
 
-const TitleDescr = styled.p`
+const TitleDescr = styled.h4`
   text-align: left;
   margin-left: 0.5em;
 `;
@@ -65,6 +75,7 @@ const Title = styled.h1`
 const Comments = styled.div`
   text-align: justify;
   margin: 0 2em;
+  width: 80vw;
 `;
 
 const SndTitle = styled.h2`

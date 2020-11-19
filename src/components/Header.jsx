@@ -9,6 +9,7 @@ export const DivHeader = styled.div`
   color : white;
   font-size: 4vh;
   text-shadow: 1px 1px 2px black;
+  height: 12vh;
   @media ${device.mobile} {
     height: 15vh;
     font-size: 17px;

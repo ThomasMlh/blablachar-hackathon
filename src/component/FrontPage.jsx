@@ -47,7 +47,7 @@ const Details = styled.div`
 
 const ButtonDetails = styled.button`
   background-color: #fdefcd;
-  color: #272626;
+  color: #3b3a3a;
   border: none;
   text-align: center;
   text-decoration: none;

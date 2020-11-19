@@ -31,6 +31,14 @@ const DivLabel = styled.div`
   text-align: start;
 `;
 
+const H1 = styled.h1`
+  color: white;
+  margin-bottom: 3vh;
+  font-size : 8vh;
+  text-shadow: 1px 1px 2px black;
+
+`;
+
 const Label = styled.label`
   color: white;
   text-shadow: 1px 1px 2px black;
@@ -149,7 +157,7 @@ const place = [];
 render(){
   return (
     <Div>
-      <h1>Post your trip</h1>
+      <H1>Post your trip</H1>
       <div>
         <Formulaire onSubmit={this.submitForm}>
           <fieldset>

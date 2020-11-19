@@ -1,0 +1,88 @@
+[
+  {
+    "id": 500,
+    "name": "Galatée",
+    "age": 35,
+    "char_model": "Titan 1",
+    "departure": "Thèbes",
+    "arrival": "Hermione",
+    "rate": 3.8,
+    "price": 15,
+    "seats": 3,
+    "luggage": 1,
+    "day_departure": "12",
+    "month_departure": "Thargélion",
+    "number_routes": 6,
+    "arrived_at_destination": 6,
+    "description": "?????",
+    "published_at": "2020-11-19T15:22:04.697Z",
+    "created_at": "2020-11-19T15:22:02.442Z",
+    "updated_at": "2020-11-19T15:22:04.749Z",
+    "char_image": [
+      {
+        "id": 27,
+        "name": "Titan 1.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 248,
+        "height": 300,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_Titan_1_8df1dc74fe.jpg",
+            "hash": "thumbnail_Titan_1_8df1dc74fe",
+            "mime": "image/jpeg",
+            "name": "thumbnail_Titan 1.jpg",
+            "path": null,
+            "size": 6.12,
+            "width": 129,
+            "height": 156
+          }
+        },
+        "hash": "Titan_1_8df1dc74fe",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 20.08,
+        "url": "test",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2020-11-19T14:54:32.687Z",
+        "updated_at": "2020-11-19T14:54:32.734Z"
+      }
+    ],
+    "profile_image": [
+      {
+        "id": 3,
+        "name": "Galatee.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 248,
+        "height": 300,
+        "formats": {
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_Galatee_0828434cf1.jpg",
+            "hash": "thumbnail_Galatee_0828434cf1",
+            "mime": "image/jpeg",
+            "name": "thumbnail_Galatee.jpg",
+            "path": null,
+            "size": 6.39,
+            "width": 129,
+            "height": 156
+          }
+        },
+        "hash": "Galatee_0828434cf1",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 18.55,
+        "url": "/uploads/Galatee_0828434cf1.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2020-11-19T14:52:41.079Z",
+        "updated_at": "2020-11-19T14:52:41.176Z"
+      }
+    ]
+  }
+]

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {device} from "./Device"
 
 export const DivHeader = styled.div`
   background-color: #efdcbe;
@@ -9,15 +10,27 @@ export const DivHeader = styled.div`
   font-size: 4vh;
   text-decoration: none;
   text-shadow: 1px 1px 2px black;
+  @media ${device.mobile} {
+    height: 15vh;
+    font-size: 17px;
+    }
+
 `;
 
 export const DivLogo = styled.div`
 display : flex;
 padding-right: 18vw;
+@media ${device.mobile} {
+    padding-right: 0vw;
 
+    }
 `;
 export const ImgLogo = styled.img`
-height: 20vh;`
+height: 20vh;
+@media ${device.mobile} {
+    height: 12vh;
+    width: 12vh
+    }`
 
 export const A = styled.a`
 text-decoration: none;
@@ -26,6 +39,9 @@ color : white;
 &:hover{
     color:black;
     transition: 0.6s;
+    @media ${device.mobile} {
+        padding-right: 0vw;
+    }
 }
 `
 
@@ -33,10 +49,16 @@ export const PLogo = styled.p`
 text-align: center;
 font-size: 4vh;
 padding-left: 2vh;
+@media ${device.mobile} {
+display: none    }
+
 `
 export const PDescription = styled.p`
 text-align: center;
 font-size: 25px;
+@media ${device.mobile} {
+    display : none;
+    }
 `
 
 export const ImgBan = styled.img`

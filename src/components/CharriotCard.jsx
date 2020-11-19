@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Device from './Device';
 
 const GameCard=styled.figure`
     display: flex;
@@ -25,6 +26,8 @@ const Char=styled.img`
     width: auto;
     height: 250px;
     border-radius: 1rem;
+    @media ${device.mobile} {
+    display: none    }  
     `;
 
 const Blockquote=styled.blockquote`
@@ -35,7 +38,7 @@ const Blockquote=styled.blockquote`
     `;
 const COL1=styled.div`
     margin-top: 7px;
-    width: 300px;
+    width: 350px;
     `;
 
 const StarIcon=styled.div`
@@ -52,8 +55,8 @@ export default function CharriotCard () {
                 <COL1>
                     <Blockquote>Cabaillus 3000</Blockquote>
                     <h2>3 horses</h2>
-                    <p>Top Speed on paved: 50 km/h</p>
-                    <p>Release Year: 12 mounikion before JC</p>
+                    <p><strong>Top Speed on paved: </strong>50 km/h</p>
+                    <p><strong>Release Year:</strong> 12 mounikion before JC</p>
                     <StarIcon><FontAwesomeIcon icon={faStar}/>  rating 4.7</StarIcon>
                 </COL1>
             </figcaption>

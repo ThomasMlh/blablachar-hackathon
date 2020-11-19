@@ -19,14 +19,14 @@ const UserMainInfo = styled.div`
 `;
 
 const UserImg = styled.img`
-  max-width: 20vw;
+  max-width: 25vw;
   height: auto;
   margin-right: 1em;
 `;
 
 const UserDescr = styled.div`
   margin-left: 1em;
-  width: 50vw;
+  width: 60vw;
 `;
 
 const UserSecondInfo = styled.div`
@@ -37,7 +37,7 @@ const UserSecondInfo = styled.div`
 
 const BoxPersonality = styled.div`
   margin-right: 1em;
-  width: 20vw;
+  width: 25vw;
 `;
 
 const StyledUl = styled.ul`
@@ -53,7 +53,7 @@ const StyledUl = styled.ul`
 `;
 
 const Description = styled.p`
-  width: 50vw;
+  width: 60vw;
   height: 20vh;
   background-color: #faeed1;
 `;

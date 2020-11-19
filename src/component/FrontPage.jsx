@@ -47,7 +47,7 @@ const Details = styled.div`
 
 const ButtonDetails = styled.button`
   background-color: #fdefcd;
-  color: black;
+  color: #272626;
   border: none;
   text-align: center;
   text-decoration: none;
@@ -56,6 +56,10 @@ const ButtonDetails = styled.button`
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  &:hover {
+    font-size: 3em;
+    color: black;
+  }
 `;
 
 const ImageProfil = styled.img`

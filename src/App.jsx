@@ -1,10 +1,28 @@
-import "./App.css";
-import FrontPage from "./component/FrontPage";
+import { useEffect, useState } from "react";
+
+import Header from "./components/Header";
+import CharriotPage from "./components/CharriotCard";
+import Footer from "./components/Footer";
+
+import { getProfiles } from "./api/apiCall";
 
 function App() {
+  const [profiles, setProfiles] = useState([]);
+
+  const getData = async () => {
+    const myData = await getProfiles();
+    setProfiles(myData);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <div className="App">
-      <FrontPage />
+    <div>
+      <Header />
+      <CharriotPage />
+      <Footer />
     </div>
   );
 }

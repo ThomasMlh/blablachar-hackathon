@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Header from "./components/Header";
-import CharriotPage from "./components/CharriotCard";
+import CharriotPage from "./components/CharriotPage";
 import Footer from "./components/Footer";
 
 import { getProfiles } from "./api/apiCall";

@@ -70,18 +70,19 @@ const Description=styled.div`
     font-size: 0.8em;
        }  `;
 
-export default function CharriotCard (id, name, horse, speed, releaseYear, rating) {
+export default function CharriotCard ({id, model, horses, speed, rate, luggage, handleClick}) {
     return (
         <GameCard>
             <Char src={"./Photos/Aphrodite100.jpg"} alt={""} />
             <figcaption>
                 <COL1>
-                    <Blockquote>Cabaillus 3000</Blockquote>
+                    <Blockquote>{model}</Blockquote>
                     <Description>
-                        <h2>3 horses</h2>
-                        <p><strong>Top Speed on paved: </strong>50 km/h</p>
-                        <p><strong>Release Year:</strong> 12 mounikion before JC</p>
-                        <StarIcon><FontAwesomeIcon icon={faStar}/>  rating 4.7</StarIcon>
+                        <h2>{horses}</h2>
+                        <p><strong>Top Speed on paved: </strong>{speed} km/h</p>
+                        <p><strong>Luggage:</strong> {luggage}</p>
+                        <StarIcon><FontAwesomeIcon icon={faStar}/>  rating {rate}</StarIcon>
+                        <button id={id} onClick={handleClick}>remove</button>
                     </Description>       
                 </COL1>
             </figcaption>

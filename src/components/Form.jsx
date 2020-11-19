@@ -1,6 +1,76 @@
-export default function Form() {
+import styled from "styled-components";
+
+const Div = styled.div`
+  background-color: rgba(239, 220, 190, 0.29);
+  height: 74vh;
+  text-align: center;
+  margin-top: -70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Formulaire = styled.form`
+  background-color: rgba(228, 200, 155, 0.29);
+  border: solid;
+  border-radius: 8px;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
-    const place = [];
+`;
+
+const DivLabel = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+  width: 100%;
+  text-align: start;
+`;
+
+const Label = styled.label`
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  display: inline-block;
+  margin-right: 10px;
+  width: 30%;
+`;
+
+const Input = styled.input`
+  padding-left: 10%;
+  width: 50%;
+`;
+const Select = styled.select`
+  padding-left: 10%;
+  width: 61%;
+  text-align: center;
+`;
+
+const StyledButton = styled.button`
+  padding: 0 20px;
+  border: none;
+  background: #e9c47b;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  height: 4vh;
+  border-radius: 5px;
+  margin: 1em 0;
+  &:hover {
+    background: #fbf7ef;
+    color: #e9c47b;
+    border: 2px solid #e9c47b;
+    cursor: pointer;
+  }
+`;
+
+
+export default function Form() {
+  const place = [];
   for (let i = 1; i < 6; i += 1) {
     place.push(
       <option value={i * 6} key={i}>
@@ -28,25 +98,32 @@ export default function Form() {
   }
 
   return (
-    <div>
-        <h1>Post your trip</h1>
+    <Div>
+      <h1>Post your trip</h1>
       <div>
-        <form action="">
-          <div>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
-          </div>
-          <div>
-            <label htmlFor="trip">Trip</label>
-            <input type="text" name="trip" id="trip" />
-            <input type="text" name="trip" />
-          </div>
-          <div>
-            <label for="start">Choose Day :</label>
-            <select name="start" id="start">
-              {day}
-            </select>
-            <select name="month" id="month">
+        <Formulaire action="">
+          <fieldset>
+            <DivLabel>
+              <Label for="name">Name :</Label>
+              <Input type="text" name="name" id="name" />
+            </DivLabel>
+            <DivLabel>
+              <Label for="trip">Departure:</Label>
+              <Input type="text" name="trip" id="trip" />
+            </DivLabel>
+            <DivLabel>
+              <Label for="trip">Arrival :</Label>
+              <Input type="text" name="trip" id="trip" />
+            </DivLabel>
+            <DivLabel>
+              <Label for="start">Choose Day :</Label>
+              <Select name="start" id="start">
+                {day}
+              </Select>
+            </DivLabel>
+            <DivLabel>
+            <Label for="start">Choose Month :</Label>
+            <Select name="month" id="month">
                 <option value="Hécatombéion">Hécatombéion</option>
                 <option value="Metageitnion">Metageitnion</option>
                 <option value="Béodromion">Béodromion</option>
@@ -59,39 +136,40 @@ export default function Form() {
                 <option value="Mounikion">Mounikion</option>
                 <option value="Thargélion">Thargélion</option>
                 <option value="Scirophoron">Scirophoron</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="price">Price</label>
-            <input type="text" name="price" id="price" />
-          </div>
-          <div>
-            <label for="place-select">Place</label>
-            <select name="place-select" id="place-select">
-              {place}
-            </select>
-          </div>
-          <div>
-            <label for="luggage">Luggage</label>
-            <select name="luggage" id="luggage">
-              {luggage}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="chariot">Chariot</label>
-            <input type="text" name="chariot" id="chariot" />
-          </div>
-          <div>
-            <label htmlFor="user_photo">User photo</label>
-            <input type="text" name="user_photo" id="user_photo" />
-          </div>
-          <div>
-            <label htmlFor="user_chariot">Chariot picture</label>
-            <input type="text" name="user_chariot" id="user_chariot" />
-          </div>
-          <button>Validate</button>
-        </form>
+              </Select>
+            </DivLabel>
+            <DivLabel>
+              <Label for="price">Price :</Label>
+              <Input type="text" name="price" id="price" />
+            </DivLabel>
+            <DivLabel>
+              <Label for="place-select">Place :</Label>
+              <Select name="place-select" id="place-select">
+                {place}
+              </Select>
+            </DivLabel>
+            <DivLabel>
+              <Label for="luggage">Luggage :</Label>
+              <Select name="luggage" id="luggage">
+                {luggage}
+              </Select>
+            </DivLabel>
+            <DivLabel>
+              <Label for="chariot">Chariot :</Label>
+              <Input type="text" name="chariot" id="chariot" />
+            </DivLabel>
+            <DivLabel>
+              <Label for="user_photo">User photo :</Label>
+              <Input type="text" name="user_photo" id="user_photo" />
+            </DivLabel>
+            <DivLabel>
+              <Label for="user_chariot">Chariot picture :</Label>
+              <Input type="text" name="user_chariot" id="user_chariot" />
+            </DivLabel>
+            <StyledButton>Validate</StyledButton>
+          </fieldset>
+        </Formulaire>
       </div>
-    </div>
+    </Div>
   );
 }

@@ -11,6 +11,7 @@ color : white;
 text-shadow: 1px 1px 2px black;
 font-size: 2vh;
 height: 12vh;
+margin-top: -11px;
 @media ${device.mobile} {
     font-size: 2vh;
     

@@ -38,6 +38,7 @@ const DriverName = styled.h1`
   font-weight: bold;
   font-size: 1.5em;
   margin-bottom: 1em;
+  font-family: Cinzel Decorative;
 `;
 
 const UserSecondInfo = styled.div`
@@ -66,6 +67,7 @@ const StyledUl = styled.ul`
   justify-content: center;
   line-height: 1.5em;
   color: #553318;
+  font-family: Cinzel Decorative;
 `;
 
 const Description = styled.p`
@@ -83,12 +85,14 @@ const TextDescr = styled.p`
 const TitleDescr = styled.h4`
   text-align: left;
   margin: 1em 0.5em 0 1em;
+  font-family: Cinzel Decorative;
 `;
 
 const Title = styled.h1`
   margin: 1em 0 1em 2em;
   font-weight: bold;
   font-size: 1.5em;
+  font-family: Cinzel Decorative;
 `;
 
 const Comments = styled.div`
@@ -105,10 +109,11 @@ const Com = styled.p`
 `;
 
 const SndTitle = styled.h2`
-  margin-left: 3em;
+  margin-left: 5em;
+  margin-top: 2em;
   font-weight: bold;
-  font-style: italic;
-  font-size: 1.2em;
+  font-size: 0.8em;
+  font-family: Cinzel Decorative;
 `;
 
 const StyledForm = styled.form`

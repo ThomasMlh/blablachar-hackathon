@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Component = styled.div`
-  background-color: #fbf7ef;
+  background-color: #fef7e7;
   padding: 2em 1em;
 `;
 
@@ -21,7 +21,6 @@ const UserMainInfo = styled.div`
 const UserImg = styled.img`
   max-width: 25vw;
   height: auto;
-  margin-right: 1em;
 `;
 
 const UserDescr = styled.div`

@@ -70,7 +70,7 @@ const Description=styled.div`
     font-size: 0.8em;
        }  `;
 
-export default function CharriotCard () {
+export default function CharriotCard (id, name, horse, speed, releaseYear, rating) {
     return (
         <GameCard>
             <Char src={"./Photos/Aphrodite100.jpg"} alt={""} />

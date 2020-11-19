@@ -32,7 +32,9 @@ const UserSecondInfo = styled.div`
   justify-content: center;
 `;
 
-const Personality = styled.ul`
+const BoxPersonality = styled.div``;
+
+const StyledUl = styled.ul`
   list-style-type: none;
   background-color: #faeed1;
   text-align: center;
@@ -40,11 +42,20 @@ const Personality = styled.ul`
   height: 20vh;
 `;
 
-const Description = styled.div`
+const Description = styled.ul`
   width: 60vw;
   height: 20vh;
   background-color: #faeed1;
-  text-align: center;
+`;
+
+const TextDescr = styled.p`
+  text-align: justify;
+  margin: 0.5em;
+`;
+
+const TitleDescr = styled.p`
+  text-align: left;
+  margin-left: 0.5em;
 `;
 
 const Title = styled.h1`
@@ -59,8 +70,6 @@ const Comments = styled.div`
 const SndTitle = styled.h2`
   margin-left: 3em;
 `;
-
-const LeaveCom = styled.div``;
 
 const StyledForm = styled.form`
   display: flex;
@@ -132,17 +141,19 @@ export default function Drivers() {
           </UserDescr>
         </UserMainInfo>
         <UserSecondInfo>
-          <Personality>
-            <li>Moderate Alcoholic</li>
-            <li>Drive hands free</li>
-            <li>Chatty</li>
-          </Personality>
+          <BoxPersonality>
+            <StyledUl>
+              <li>Moderate Alcoholic</li>
+              <li>Drive hands free</li>
+              <li>Chatty</li>
+            </StyledUl>
+          </BoxPersonality>
           <Description>
-            <p>Description</p>
-            <p>
+            <TitleDescr>Description</TitleDescr>
+            <TextDescr>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            </TextDescr>
           </Description>
         </UserSecondInfo>
       </ProfilInfo>
@@ -159,7 +170,7 @@ export default function Drivers() {
           YOYO
         </p>
       </Comments>
-      <LeaveCom>
+      <div>
         <SndTitle>Leave a comment</SndTitle>
         <StyledForm>
           <label>
@@ -172,7 +183,7 @@ export default function Drivers() {
             Post
           </StyledButton>
         </StyledForm>
-      </LeaveCom>
+      </div>
     </Component>
   );
 }

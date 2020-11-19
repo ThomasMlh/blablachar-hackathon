@@ -49,7 +49,7 @@ const Select = styled.select`
   text-align: center;
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.input`
   padding: 0 20px;
   border: none;
   background: #e9c47b;
@@ -99,36 +99,81 @@ const place = [];
   export default class Form extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      name :"",
+      departure:"",
+      arrival:"",
+      day_departure:"",
+      month_departure:"",
+      price: "",
+      seats:"",
+      luggage: "",
+    }
   }
+
+
+  onChange = (e) =>{
+    this.setState({
+      [e.target.name] : e.target.value
+    });
+  };
+
   
+  submitForm = (e) => {
+    e.preventDefault();
+    const config = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.state)
+    };
+    const url = "https://still-ravine-63028.herokuapp.com/profiles";
+    fetch(url, config)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.error) {
+          alert(res.error);
+        } else {
+          alert(`Your travel #${res} has been successfully added!`);
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+        alert("There was an error when adding the travel.");
+      });
+  };
+
+
+
 render(){
   return (
     <Div>
       <h1>Post your trip</h1>
       <div>
-        <Formulaire action="">
+        <Formulaire onSubmit={this.submitForm}>
           <fieldset>
             <DivLabel>
-              <Label for="name">Name :</Label>
-              <Input type="text" name="name" id="name" />
+              <Label htmlFor="name">Name :</Label>
+              <Input type="text" name="name" id="name" onChange={this.onChange} value={this.state.name} />
             </DivLabel>
             <DivLabel>
-              <Label for="trip">Departure:</Label>
-              <Input type="text" name="trip" id="trip" />
+              <Label htmlFor="departure">Departure:</Label>
+              <Input type="text" name="departure" id="departure" onChange={this.onChange} value={this.state.departure}/>
             </DivLabel>
             <DivLabel>
-              <Label for="trip">Arrival :</Label>
-              <Input type="text" name="trip" id="trip" />
+              <Label htmlFor="arrival">Arrival :</Label>
+              <Input type="text" name="arrival" id="arrival" onChange={this.onChange} value={this.state.arrival}/>
             </DivLabel>
             <DivLabel>
-              <Label for="start">Choose Day :</Label>
-              <Select name="start" id="start">
+              <Label htmlFor="start">Choose Day :</Label>
+              <Select name="start" id="start" onChange={this.onChange} value={this.state.month_departure}>
                 {day}
               </Select>
             </DivLabel>
             <DivLabel>
-            <Label for="start">Choose Month :</Label>
-            <Select name="month" id="month">
+            <Label htmlFor="start">Choose Month :</Label>
+            <Select name="month" id="month"onChange={this.onChange} value={this.state.month_departure}>
                 <option value="Hécatombéion">Hécatombéion</option>
                 <option value="Metageitnion">Metageitnion</option>
                 <option value="Béodromion">Béodromion</option>
@@ -144,34 +189,34 @@ render(){
               </Select>
             </DivLabel>
             <DivLabel>
-              <Label for="price">Price :</Label>
-              <Input type="text" name="price" id="price" />
+              <Label htmlFor="price" >Price :</Label>
+              <Input type="text" name="price" id="price" onChange={this.onChange} value={this.state.price} />
             </DivLabel>
             <DivLabel>
-              <Label for="place-select">Place :</Label>
-              <Select name="place-select" id="place-select">
+              <Label htmlFor="place-select" >Place :</Label>
+              <Select name="place-select" id="place-select" onChange={this.onChange} value={this.state.seats}>
                 {place}
               </Select>
             </DivLabel>
             <DivLabel>
-              <Label for="luggage">Luggage :</Label>
-              <Select name="luggage" id="luggage">
+              <Label htmlFor="luggage">Luggage :</Label>
+              <Select name="luggage" id="luggage" onChange={this.onChange} value={this.state.luggage}>
                 {luggage}
               </Select>
             </DivLabel>
             <DivLabel>
-              <Label for="chariot">Chariot :</Label>
+              <Label htmlFor="chariot">Chariot :</Label>
               <Input type="text" name="chariot" id="chariot" />
             </DivLabel>
             <DivLabel>
-              <Label for="user_photo">User photo :</Label>
+              <Label htmlFor="user_photo">User photo :</Label>
               <Input type="text" name="user_photo" id="user_photo" />
             </DivLabel>
             <DivLabel>
-              <Label for="user_chariot">Chariot picture :</Label>
+              <Label htmlFor="user_chariot">Chariot picture :</Label>
               <Input type="text" name="user_chariot" id="user_chariot" />
             </DivLabel>
-            <StyledButton>Validate</StyledButton>
+            <StyledButton type="submit" value="Send" />
           </fieldset>
         </Formulaire>
       </div>

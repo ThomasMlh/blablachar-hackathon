@@ -7,3 +7,4 @@ const size = {
     mobile: `(max-width: ${size.mobile})`,
     desktop: `(min-width: ${size.desktop})`,
   };
+  

@@ -8,7 +8,6 @@ export const DivHeader = styled.div`
   align-items: center;
   color : white;
   font-size: 4vh;
-  text-decoration: none;
   text-shadow: 1px 1px 2px black;
   @media ${device.mobile} {
     height: 15vh;
@@ -38,11 +37,11 @@ padding-right: 3vw;
 color : white;
 &:hover{
     color:black;
-    transition: 0.6s;
+    transition: 0.6s;}
     @media ${device.mobile} {
         padding-right: 0vw;
     }
-}
+
 `
 
 export const PLogo = styled.p`
@@ -77,13 +76,13 @@ export default function Header() {
           <a href="#3"><ImgLogo src="/images/logo.png" alt="logo"/></a>
           <section>
           <PLogo>Blablachar
-          <PDescription>“Le tour de Rome en un éclair”</PDescription>
+          <PDescription>“The best way to travel around Rome”</PDescription>
           </PLogo>
           </section>
       </DivLogo>
-      <A href="#1">Trajets</A>
-      <A href="#2">Poster un trajet</A>
-      <A href="#3">Les chars</A>
+      <A href="#1">Trips</A>
+      <A href="#2">Post a trip</A>
+      <A href="#3">Chariot</A>
       
         
   </DivHeader>

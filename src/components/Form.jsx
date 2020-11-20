@@ -24,6 +24,7 @@ const Formulaire = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 43vh;
   @media ${device.mobile} {
   height: 47vh;
   width: 45vh;
@@ -38,6 +39,7 @@ const DivLabel = styled.div`
   margin: 5px 0;
   width: 100%;
   text-align: start;
+  height: 2.7vh;
   @media ${device.mobile} {
 
   }

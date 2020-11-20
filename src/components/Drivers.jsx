@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React from "react";
 
 const Component = styled.div`
   background-color: #fef7e7;
@@ -170,14 +170,15 @@ const StyledButton = styled.button`
 `;
 
 export default function Drivers() {
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = React.useState([]);
 
-  const submitComment = (e) => {
-    e.preventDefault();
-    addComment();
+  let handleSubmit = (event) => {
+    event.preventDefault();
+    submitComment();
+    console.log(comments);
   };
 
-  const addComment = (newComment) => {
+  let submitComment = (newComment) => {
     setComments([...comments, newComment]);
   };
 
@@ -232,17 +233,14 @@ export default function Drivers() {
       </Comments>
       <div>
         <SndTitle>Leave a comment</SndTitle>
-        <StyledForm>
+        <StyledForm onSubmit={handleSubmit}>
           <label>
             <StyledInput type="text" placeholder="Your name" />
           </label>
           <label>
-            <StyledTextarea
-              placeholder="Hey, you haven't ridden with him yet. You can't leave a message !"
-              disabled
-            ></StyledTextarea>
+            <StyledTextarea placeholder="Hey, you haven't ridden with him yet. You can't leave a message !"></StyledTextarea>
           </label>
-          <StyledButton type="submit" value="Submit" onSubmit={submitComment}>
+          <StyledButton type="submit" value="Submit">
             Post
           </StyledButton>
         </StyledForm>

@@ -1,6 +1,8 @@
-import { useLocation } from "react-router";
-import styled from "styled-components";
 import React from "react";
+import { useLocation } from "react-router";
+
+import styled from "styled-components";
+import { device } from "./Device";
 
 const Component = styled.div`
   background-color: #fef7e7;
@@ -25,7 +27,7 @@ const UserImg = styled.img`
   width: 25vw;
   height: auto;
   margin-bottom: 1em;
-  @media (max-width: 800px) {
+  @media ${device.mobile} {
     width: 60vw;
   }
 `;
@@ -53,7 +55,7 @@ const BoxPersonality = styled.div`
   margin-right: 1em;
   width: 25vw;
   margin-bottom: 1em;
-  @media (max-width: 800px) {
+  @media ${device.mobile} {
     width: 60vw;
   }
 `;
@@ -111,7 +113,7 @@ const Com = styled.p`
 `;
 
 const SndTitle = styled.h2`
-  margin-left: 5em;
+  margin-left: 5vw;
   margin-top: 2em;
   font-weight: bold;
   font-size: 0.8em;
@@ -122,7 +124,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 20vw;
-  margin-left: 4em;
+  margin-left: 4vw;
 `;
 
 const StyledInput = styled.input`

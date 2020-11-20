@@ -69,7 +69,8 @@ export const ImgBan = styled.img`
   width: 100%;
   background-color: rgba(239, 220, 190, 0.29);
   @media ${device.mobile} {
-   
+    width: 300%;
+    margin:0 -200% ;
   }
   
 `;

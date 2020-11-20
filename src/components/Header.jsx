@@ -24,6 +24,7 @@ export const DivLogo = styled.div`
     padding-right: 0vw;
   }
 `;
+
 export const ImgLogo = styled.img`
   height: 20vh;
   @media ${device.mobile} {
@@ -70,18 +71,26 @@ export const ImgBan = styled.img`
   background-color: rgba(239, 220, 190, 0.29);
 `;
 
+export const BLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`;
+
 export default function Header() {
   return (
     <div>
       <DivHeader>
         <DivLogo>
-          <a href="#3">
+          <Link to="chariots">
             <ImgLogo src="/images/logo.png" alt="logo" />
-          </a>
+          </Link>
           <section>
+          <BLink to="chariots">
           <PLogo>BlaBlaChar
           <PDescription>“The best way to travel around Athens”</PDescription>
           </PLogo>
+          </BLink>
+
 
           </section>
         </DivLogo>

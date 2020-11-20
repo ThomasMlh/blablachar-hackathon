@@ -237,7 +237,10 @@ export default function Drivers() {
             <StyledInput type="text" placeholder="Your name" />
           </label>
           <label>
-            <StyledTextarea placeholder="Leave a comment..."></StyledTextarea>
+            <StyledTextarea
+              placeholder="Hey, you haven't ridden with him yet. You can't leave a message !"
+              disabled
+            ></StyledTextarea>
           </label>
           <StyledButton type="submit" value="Submit" onSubmit={submitComment}>
             Post

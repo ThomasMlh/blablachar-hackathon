@@ -6,7 +6,7 @@ import FrontPage from "./components/FrontPage";
 import ListDrivers from "./components/ListDrivers";
 import Drivers from "./components/Drivers";
 import Form from "./components/Form";
-import ChariotPage from "./components/ChariotPage";
+import CharriotPage from "./components/CharriotPage";
 
 
 import { getProfiles } from "./api/apiCall";
@@ -38,9 +38,10 @@ function App() {
       <Switch>
         <Route path="/post" component={Form} />
         <Route path="/drivers" component={Drivers} />
-        <Route path="/chariots" component={ChariotPage} />
+        <Route path="/chariots" component={CharriotPage} />
         <Route path="/safety" component={Safety} />
         <Route path="/faq" component={Faq} />
+
         <Route exact path="/" component={FrontPage} />
       </Switch>
 

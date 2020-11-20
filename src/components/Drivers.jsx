@@ -1,3 +1,4 @@
+import { useLocation } from "react-router";
 import styled from "styled-components";
 
 const Component = styled.div`
@@ -166,25 +167,27 @@ const StyledButton = styled.button`
     border: 2px solid #e9c47b;
   }
 `;
-
 export default function Drivers() {
+  let location = useLocation();
+  const info = location.state.info;
+  console.log(info);
   return (
     <Component>
       <ProfilInfo>
         <UserMainInfo>
           <UserImg
-            src="https://www.geekasia.com/wp-content/uploads/mona_lisa_chuck_norris.jpg"
+            src={`https://still-ravine-63028.herokuapp.com${info.profile_image[0].url}`}
             alt=""
           />
           <UserDescr>
-            <DriverName>Chuck Norris</DriverName>
+            <DriverName>{info.name}</DriverName>
             <p>
-              Rating : 5.0 <span>&#11088;</span>
+              Rating : {info.rate} <span>&#11088;</span>
             </p>
-            <p>Chariot : Zeus 8</p>
-            <p>Age : 152 ans</p>
-            <p>Trips made : 14</p>
-            <p>Trips achieved : 14</p>
+            <p>Chariot : {info.char_model}</p>
+            <p>Age : {info.age}</p>
+            <p>Trips made : {info.number_routes}</p>
+            <p>Trips achieved : {info.arrived_at_destination}</p>
           </UserDescr>
         </UserMainInfo>
         <UserSecondInfo>
@@ -197,10 +200,7 @@ export default function Drivers() {
           </BoxPersonality>
           <Description>
             <TitleDescr>Description</TitleDescr>
-            <TextDescr>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </TextDescr>
+            <TextDescr>{info.description}</TextDescr>
           </Description>
         </UserSecondInfo>
       </ProfilInfo>

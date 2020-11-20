@@ -105,8 +105,12 @@ export default function Header() {
             </BLink>
           </section>
         </DivLogo>
-        <A to="post">Post a trip</A>
-        <A to="chariots">Chariots</A>
+        <A to={(location) => ({ ...location, pathname: "/post" })}>
+          Post a trip
+        </A>
+        <A to={(location) => ({ ...location, pathname: "/chariots" })}>
+          Chariots
+        </A>
       </DivHeader>
       <div>
         <ImgBan src="/images/banniere.png" alt="banniere" />

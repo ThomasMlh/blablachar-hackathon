@@ -1,4 +1,4 @@
-import { useLocation, useEffect } from "react-router";
+import { useLocation } from "react-router";
 import styled from "styled-components";
 import React from "react";
 
@@ -168,10 +168,11 @@ const StyledButton = styled.button`
     border: 2px solid #e9c47b;
   }
 `;
+
 export default function Drivers() {
   let location = useLocation();
   const info = location.state.info;
-  console.log(info);
+  console.log(location.state);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { useState } from "react";
 
 const Component = styled.div`
   background-color: #fef7e7;
@@ -65,9 +66,10 @@ const StyledUl = styled.ul`
   padding: 0;
   flex-direction: column;
   justify-content: center;
-  line-height: 1.5em;
+  line-height: 1.3em;
   color: #553318;
   font-family: Cinzel Decorative;
+  font-size: 0.8em;
 `;
 
 const Description = styled.p`
@@ -168,6 +170,17 @@ const StyledButton = styled.button`
 `;
 
 export default function Drivers() {
+  const [comments, setComments] = useState([]);
+
+  const submitComment = (e) => {
+    e.preventDefault();
+    addComment();
+  };
+
+  const addComment = (newComment) => {
+    setComments([...comments, newComment]);
+  };
+
   return (
     <Component>
       <ProfilInfo>
@@ -226,7 +239,7 @@ export default function Drivers() {
           <label>
             <StyledTextarea placeholder="Leave a comment..."></StyledTextarea>
           </label>
-          <StyledButton type="submit" value="Post">
+          <StyledButton type="submit" value="Submit" onSubmit={submitComment}>
             Post
           </StyledButton>
         </StyledForm>

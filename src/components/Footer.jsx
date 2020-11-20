@@ -39,8 +39,8 @@ export default function Footer(){
         <ImgBan src="/images/banniere.png" alt="banniere"/>
     <DivFooter>
         <A to="safety">Safety instructions</A>
-        <A href="#2">FAQ</A>
-        <A href="#3">Contact Us</A>
+        <A to="faq">FAQ</A>
+        <A to="#3">Contact Us</A>
     </DivFooter>
     </div>
 }

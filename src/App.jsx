@@ -11,6 +11,7 @@ import { getProfiles } from "./api/apiCall";
 
 import { Switch, Route } from "react-router-dom";
 import Safety from "./components/Safety";
+import Faq from "./components/Faq";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/drivers" component={Drivers} />
         <Route path="/chariots" component={ChariotPage} />
         <Route path="/safety" component={Safety} />
+        <Route path="/faq" component={Faq} />
         <Route exact path="/" component={FrontPage} />
       </Switch>
 

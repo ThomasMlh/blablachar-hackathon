@@ -26,10 +26,11 @@ const GameCard=styled.figure`
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     @media ${device.mobile} {
     flex-direction: column; 
-    width: 290px;
+    width: 100vw;
     height: 550px;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
        }`;
 
 const Char=styled.img`

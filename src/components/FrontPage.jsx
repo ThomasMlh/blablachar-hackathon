@@ -2,19 +2,22 @@ import "../reset.css";
 import styled from "styled-components";
 import React, { useState } from "react";
 
-const Page = styled.div`
-  display: flex;
-  background-color: #fcf6ee;
-  height: 100%;
-  padding-bottom: 5%;
+const PageTrip = styled.div`
+  width: 100%;
+  margin-top: 4vh;
 `;
 
 const Card = styled.div`
-  width: 70vw;
-
-  background-color: #fdefcd;
+  background: rgb(255, 245, 230);
+  width: 90%;
+  height: 90%;
   margin-left: auto;
   margin-right: auto;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 245, 230, 1) 0%,
+    rgba(249, 221, 165, 0.7637255585828081) 100%
+  );
   border-radius: 20px;
   border: solid #c5b286 1px;
   box-shadow: 3px 5px 5px #797474;
@@ -27,6 +30,7 @@ const CardContent = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
+  padding-left: 0.5vw;
 `;
 
 const Details = styled.div`
@@ -34,7 +38,7 @@ const Details = styled.div`
 `;
 
 const ButtonDetails = styled.button`
-  background-color: #fdefcd;
+  background-color: #11ffee00;
   color: #3b3a3a;
   border: none;
   text-align: center;
@@ -51,8 +55,7 @@ const ButtonDetails = styled.button`
 `;
 
 const ImageProfil = styled.img`
-  width: 25vw;
-  margin-left: 2vw;
+  width: 15vw;
   margin-top: 4vh;
   margin-bottom: 4vh;
   border-radius: 20px;
@@ -64,28 +67,39 @@ const Description = styled.div`
   margin-bottom: auto;
 `;
 
-const Trajet = styled.h1`
-  font-size: 1.5em;
+const Trajet = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const From = styled.h2`
+  font-size: 1.4em;
+  font-family: Cinzel decorative;
+`;
+
+const To = styled.h2`
+  font-size: 1.4em;
+  font-family: Cinzel decorative;
 `;
 
 const Date = styled.h2`
   margin-top: 4vh;
-  font-size: 1.3em;
+  font-size: 1em;
 `;
 
 const Driver = styled.h3`
-  font-size: 1.2em;
+  font-size: 1em;
   margin-top: 4vh;
 `;
 
 const Price = styled.h3`
   margin-top: 2vh;
-  font-size: 1.2em;
+  font-size: 1em;
 `;
 
 const PlaceNumber = styled.div`
   margin-top: 2vh;
-  font-size: 1.2em;
+  font-size: 1em;
 `;
 
 const DetailsFav = styled.div`
@@ -119,41 +133,45 @@ const NotFavorite = styled.div`
   background-size: 100%;
 `;
 
-const DetailsCard = styled.div`
-  margin-top: 2vh;
-  position: relative;
-  padding-left: 4vw;
-  padding-right: 13vw;
-  margin-bottom: auto;
-  background-color: #fdefcd;
+const DetailsAlacon = styled.div`
   display: flex;
-  justify-content: space-between;
-  border-radius: 15px;
+  flex-direction: column;
+`;
+
+const DetailsCard = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+`;
+
+const Trait2 = styled.div`
+  background-color: #292828;
+  height: 1px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 5;
 `;
 
 const DetailCardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 0vw;
 `;
 
 const ChariotModel = styled.h3`
-  font-size: 1.2em;
-`;
-
-const Contact = styled.h3`
-  margin-top: 4vh;
-  font-size: 1.2em;
+  font-size: 1.3em;
 `;
 
 const Lugage = styled.h3`
   margin-top: 4vh;
-  font-size: 1.2em;
+  font-size: 1.3em;
 `;
 
 const ImageChariot = styled.img`
-  width: 25vw;
-  margin-left: 2vw;
+  width: 15vw;
+  margin-left: 1.2vw;
   margin-top: 4vh;
   margin-bottom: 4vh;
   border-radius: 20px;
@@ -171,7 +189,7 @@ export default function FrontPage({ profile }) {
     setFavorite(!favorite);
   };
   return (
-    <Page>
+    <PageTrip>
       <Card>
         <CardContent>
           <ImageProfil
@@ -180,7 +198,8 @@ export default function FrontPage({ profile }) {
           />
           <Description>
             <Trajet>
-              From : {profile.departure} To : {profile.arrival}
+              <From>From : {profile.departure} </From>
+              <To>To : {profile.arrival}</To>
             </Trajet>
             <Date>
               Date : {profile.day_departure} {profile.month_departure}
@@ -201,21 +220,25 @@ export default function FrontPage({ profile }) {
           </DetailsFav>
         </CardContent>
         {showDetails ? (
-          <DetailsCard>
-            <ImageChariot
-              src={`https://still-ravine-63028.herokuapp.com${profile.char_image[0].url}`}
-              alt="maximus"
-            />
-            <DetailCardContent>
-              <ChariotModel>Chariot model : {profile.char_model}</ChariotModel>
-              <Lugage>Luggage : {profile.luggage}</Lugage>
-              <Contact>Contact the charioteer : ...</Contact>
-            </DetailCardContent>
-          </DetailsCard>
+          <DetailsAlacon>
+            <Trait2></Trait2>
+            <DetailsCard>
+              <DetailCardContent>
+                <ChariotModel>
+                  Chariot model : {profile.char_model}
+                </ChariotModel>
+                <Lugage>Luggage : {profile.luggage}</Lugage>
+              </DetailCardContent>
+              <ImageChariot
+                src={`https://still-ravine-63028.herokuapp.com${profile.char_image[0].url}`}
+                alt="maximus"
+              />
+            </DetailsCard>
+          </DetailsAlacon>
         ) : (
           ""
         )}
       </Card>
-    </Page>
+    </PageTrip>
   );
 }

@@ -11,7 +11,7 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: center;
   @media ${device.mobile} {
-    height: 73.3vh
+    height: 80.2vh
   }
 `;
 
@@ -108,7 +108,7 @@ const StyledButton = styled.input`
 const place = [];
   for (let i = 1; i < 6; i += 1) {
     place.push(
-      <option value={i * 6} key={i}>
+      <option value={i} key={i}>
         {i}
       </option>
     );
@@ -117,7 +117,7 @@ const place = [];
   const luggage = [];
   for (let i = 1; i < 6; i += 1) {
     luggage.push(
-      <option value={i * 6} key={i}>
+      <option value={i} key={i}>
         {i}
       </option>
     );
@@ -126,7 +126,7 @@ const place = [];
   const day = [];
   for (let i = 1; i < 32; i += 1) {
     day.push(
-      <option value={i * 32} key={i}>
+      <option value={i} key={i}>
         {i}
       </option>
     );
@@ -137,44 +137,24 @@ const place = [];
     super(props);
     this.state = {
       name :"",
+      char_model:"",
       departure:"",
       arrival:"",
+      price: 0,
+      seats: 0,
+      luggage: 0,
       day_departure:"",
       month_departure:"",
-      price: "",
-      seats:"",
-      luggage: "",
-      char_model:"",
-      char_image : [{
-        url:""}
-      ],
-      profile_image : [{
-        url:""}
-      ],
+      char_image :"",
+      profile_image : ""
     }
   }
 
 
+
   onChange = (e) =>{
     switch(e.target.name) {
-      
-        case "profile_image":
-        const new_profile_image = [{
-          url: e.target.value
-        }]
-        this.setState({
-          profile_image: new_profile_image
-        });
-        break;
-      case "char_image":
-        const new_char_image = [{
-          url: e.target.value
-        }]
-        this.setState({
-          char_image: new_char_image
-        });
-        break;
-      
+    
       default:
         this.setState({
           [e.target.name] : e.target.value
@@ -186,32 +166,14 @@ const place = [];
   submitForm = (e) => {
     e.preventDefault();
     console.log(this.state)
-    const config = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(this.state)
-    };
-    const url = "https://still-ravine-63028.herokuapp.com/profiles";
-    fetch(url, config)
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.error) {
-          alert(res.error);
-        } else {
-          alert(`Your travel #${res} has been successfully added!`);
-        }
-      })
-      .catch((e) => {
-        console.error(e);
-        alert("There was an error when adding the travel.");
-      });
+    this.props.tablo.push(this.state)
   };
 
 
 
 render(){
+  
+
   return (
     <Div>
       <H1>Post your trip</H1>
@@ -228,17 +190,19 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="arrival">Arrival :</Label>
-              <Input type="text" name="arrival" id="arrival" placeholder="Sparte"onChange={this.onChange} value={this.state.arrival}/>
+              <Input type="text" name="arrival" id="arrival" placeholder="Sparte" onChange={this.onChange} value={this.state.arrival}/>
             </DivLabel>
             <DivLabel>
               <Label htmlFor="day_departure">Choose Day :</Label>
               <Select name="day_departure" id="day_departure" onChange={this.onChange} value={this.state.day_departure}>
+                <option value="" selected disabled hidden>Choose day</option>
                 {day}
               </Select>
             </DivLabel>
             <DivLabel>
             <Label htmlFor="month_departure">Choose Month :</Label>
-            <Select type="text" name="month_departure" id="month_departure"onChange={this.onChange} value={this.state.month_departure}>
+            <Select  type="text" name="month_departure" id="month_departure" onChange={this.onChange} value={this.state.month_departure}>
+                <option value="" selected disabled hidden> Choose month</option>
                 <option value="Hécatombéion">Hécatombéion</option>
                 <option value="Metageitnion">Metageitnion</option>
                 <option value="Béodromion">Béodromion</option>
@@ -259,13 +223,13 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="seats" >Place :</Label>
-              <Select name="seats" id="seats" onChange={this.onChange} value={this.state.seats}>
+              <Select type="number" name="seats" id="seats" onChange={this.onChange} value={this.state.seats}>
                 {place}
               </Select>
             </DivLabel>
             <DivLabel>
               <Label htmlFor="luggage">Luggage :</Label>
-              <Select name="luggage" id="luggage" onChange={this.onChange} value={this.state.luggage}>
+              <Select type="number" name="luggage" id="luggage" onChange={this.onChange} value={this.state.luggage}>
                 {luggage}
               </Select>
             </DivLabel>
@@ -275,11 +239,17 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="char_image">Chariot Picture :</Label>
-              <Input type="text" name="char_image" id="char_image" onChange={this.onChange} value={this.char_image}  />
+              <Select type="text" name="char_image" id="char_image" onChange={this.onChange} value={this.state.char_image}>
+              <option value="" selected disabled hidden>Choose chariot image</option>   
+              <option value="https://still-ravine-63028.herokuapp.com/uploads/Dyonisos_50_8b5c45076c.jpg">Chariot 1</option>             
+              </Select>
             </DivLabel>
             <DivLabel>
               <Label htmlFor="profile_image">User photo :</Label>
-              <Input type="text" name="profile_image" id="profile_image" onChange={this.onChange} value={this.profile_image} />
+              <Select type="img" name="profile_image" id="profile_image" onChange={this.onChange} value={this.state.profile_image}>
+              <option value="" selected disabled hidden>Choose profil image</option>   
+              <option value="https://still-ravine-63028.herokuapp.com/uploads/Joris_3f0cf76d67.jpeg">Joris</option>          
+              </Select>
             </DivLabel>
             <StyledButton type="submit" value="Send" />
           </fieldset>

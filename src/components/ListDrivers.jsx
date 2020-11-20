@@ -1,4 +1,6 @@
 import FrontPage from "./FrontPage";
+import FrontPage2 from "./FrontPage2";
+
 import styled from "styled-components";
 
 import { device } from "./Device";
@@ -215,7 +217,7 @@ const Trait1 = styled.div`
   z-index: 5;
 `;
 
-const ListDrivers = ({ profile }) => {
+const ListDrivers = ({ profile, tablo }) => {
   return (
     <div>
       <ImageDuHaut src="/photos/charTableau.jpg" alt="Course de char" />
@@ -243,6 +245,9 @@ const ListDrivers = ({ profile }) => {
         <Warper>
           {profile.map((item) => (
             <FrontPage key={item.id} profile={item} />
+          ))}
+            {tablo.map((item) => (
+            <FrontPage2 key={item.name} profile={item} />
           ))}
         </Warper>
       </Fond>

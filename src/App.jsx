@@ -15,6 +15,7 @@ import Faq from "./components/Faq";
 
 function App() {
   const [profiles, setProfiles] = useState([]);
+  const [tablo, setTablo] = useState([]);
 
   const getData = async () => {
     const myData = await getProfiles();
@@ -25,12 +26,13 @@ function App() {
     getData();
   }, []);
 
+  console.log(tablo);
   return (
     <div>
       <Header />
 
       <Switch>
-        <Route path="/post" component={Form} />
+        <Route path="/post" component={() => <Form tablo={tablo}/>} />
         <Route path="/drivers" component={Drivers} />
         <Route path="/chariots" component={CharriotPage} />
         <Route path="/safety" component={Safety} />
@@ -39,7 +41,7 @@ function App() {
         <Route
           exact
           path="/"
-          render={() => <ListDrivers profile={profiles} />}
+          component={() => <ListDrivers profile={profiles} tablo={tablo} />}
         />
       </Switch>
 

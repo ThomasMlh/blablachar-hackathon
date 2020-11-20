@@ -8,7 +8,9 @@ import { device } from './Device';
   const Charcontainer=styled.div`
     display: flex;
     flex-direction: column;
-    padding:1em;`;
+    padding:1em;       
+    `
+    
 
   //auto-fill wrap auto if no space available
   const Wrapper = styled.div`
@@ -26,7 +28,8 @@ import { device } from './Device';
     margin-top: 20px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     @media ${device.mobile} { 
-    width: 100vw;
+    width: 100%;
+    height : 30vh;
        }
         `;
 
@@ -48,7 +51,14 @@ import { device } from './Device';
       color: #e9c47b;
       border: 2px solid #e9c47b;
       cursor: pointer;
-    }`;
+      }
+    @media ${device.mobile} { 
+      height: 10%;
+      font-size: 15px;
+      width: 90vw;
+      transition: none;
+
+       }`;
 
 const url = "https://still-ravine-63028.herokuapp.com/chars/"
 
@@ -102,7 +112,7 @@ export default function ChariotList () {
             image={image}
             handleClick={handleClick}
             />
-            })};
+            })}
           </Wrapper>
       </Charcontainer>
     </div>

@@ -27,6 +27,13 @@ const A = styled(Link)`
     transition: 0.6s;}
 `
 
+const Alink = styled.a`
+  text-decoration: none;
+  color : white;
+  &:hover{
+    color:black;
+    transition: 0.6s;}
+`
 export const ImgBan = styled.img`
 height: 5vh;
 background-repeat: repeat;
@@ -40,7 +47,7 @@ export default function Footer(){
     <DivFooter>
         <A to="safety">Safety instructions</A>
         <A to="faq">FAQ</A>
-        <A to="#3">Contact Us</A>
+        <Alink href="https://lapierreetlemarbre.com/vente-en-gros/" target="blank">Contact Us</Alink>
     </DivFooter>
     </div>
 }

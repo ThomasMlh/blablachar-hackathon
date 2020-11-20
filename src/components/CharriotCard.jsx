@@ -11,22 +11,26 @@ const GameCard=styled.figure`
     justify-content: space-around;
     padding: 1.25em;
     width: 700px;
-    height: 250px;
+    height: 280px;
     border: 1px solid #f8f8f8;
     border-radius: 1rem;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
     font-size: 1.2rem;
     font-family:  "Sansation";
     color:black;
-    background-color:#FAEED1;
+    background: linear-gradient(
+    0deg,
+    rgba(255, 245, 230, 1) 0%,
+    rgba(249, 221, 165, 0.7637255585828081) 100%
+    );
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     @media ${device.mobile} {
     flex-direction: column; 
     width: 240px;
-    height: 450px;
+    height: 550px;
     justify-content: center;
     align-items: center;
-       }  
-    `;
+       }`;
 
 const Char=styled.img`
     display: flex;
@@ -34,7 +38,13 @@ const Char=styled.img`
     height: 250px;
     border-radius: 1rem;
     border: solid 2px black;
-    `;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    &:hover {
+        -webkit-filter: sepia(100%);
+	filter: sepia(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    }`;
 
 const Blockquote=styled.blockquote`
     margin: 1rem 0;
@@ -44,9 +54,9 @@ const Blockquote=styled.blockquote`
     @media ${device.mobile} {
     text-align: center;
     font-size: 1.2em;
-       }  
-    `;
-const COL1=styled.div`
+       }`;
+
+const Col1=styled.div`
     margin-top: 2px;
     width: 350px;
     height: 280px;
@@ -57,8 +67,7 @@ const COL1=styled.div`
     text-align: center;
     @media ${device.mobile} {
     width: 200px;
-       } 
-    `;
+       }`;
 
 const StarIcon=styled.div`
     font-size: 1.2rem;
@@ -68,15 +77,13 @@ const StarIcon=styled.div`
     @media ${device.mobile} {
     text-align: center;
     font-size: 1.5em;
-       }
-    `;
+       }`;
 
 const Description=styled.div`
     @media ${device.mobile} {
     text-align: center;
     font-size: 0.8em;
-    
-       }  `;
+       }`;
 
 const Rating = styled.div`
     display: flex;
@@ -91,12 +98,32 @@ const RatingLinks = styled.a`
     cursor: pointer;
   }`;
 
+const StyledButton = styled.button`
+    padding: 0 20px;
+    border: none;
+    background: #e9c47b;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    height: 4vh;
+    border-radius: 5px;
+    margin: 1em 0;
+    &:hover {
+    background: #fbf7ef;
+    color: #e9c47b;
+    border: 2px solid #e9c47b;
+    cursor: pointer;
+    }
+    `;
+
 export default function CharriotCard ({id, model, horses, speed, rate, luggage, handleClick, image}) {
     return (
         <GameCard>
             <Char src={`https://still-ravine-63028.herokuapp.com${image[0].url}`} alt={model} />
             <figcaption>
-                <COL1>
+                <Col1>
                     <Blockquote>{model}</Blockquote>
                     <Description>
                         <h2>{horses} horses</h2>
@@ -110,9 +137,9 @@ export default function CharriotCard ({id, model, horses, speed, rate, luggage, 
                             <RatingLinks href="#2" title="Donner 2 étoiles">☆</RatingLinks>
                             <RatingLinks href="#1" title="Donner 1 étoile">☆</RatingLinks>
                             </Rating>
-                        <button id={id} onClick={handleClick}>remove</button>
+                        <StyledButton id={id} onClick={handleClick}>Remove from my List</StyledButton>
                     </Description>       
-                </COL1>
+                </Col1>
             </figcaption>
         </GameCard>
     )

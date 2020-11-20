@@ -40,15 +40,21 @@ const Blockquote=styled.blockquote`
     margin: 1rem 0;
     font-weight: bold;
     font-family: "Sansation";
-    font-size: 1.5em;
+    font-size: 1.8em;
     @media ${device.mobile} {
     text-align: center;
     font-size: 1.2em;
        }  
     `;
 const COL1=styled.div`
-    margin-top: 7px;
+    margin-top: 2px;
     width: 350px;
+    height: 280px;
+    line-height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     @media ${device.mobile} {
     width: 200px;
        } 
@@ -58,6 +64,7 @@ const StarIcon=styled.div`
     font-size: 1.2rem;
     color: rgb(245,197,24);
     padding-right: 25px;
+    margin-top: 40px;
     @media ${device.mobile} {
     text-align: center;
     font-size: 1.5em;
@@ -68,7 +75,21 @@ const Description=styled.div`
     @media ${device.mobile} {
     text-align: center;
     font-size: 0.8em;
+    
        }  `;
+
+const Rating = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 10px 10px 10px 10px;
+    `;
+
+const RatingLinks = styled.a`
+  &:hover {
+    color: orange;
+    cursor: pointer;
+  }`;
 
 export default function CharriotCard ({id, model, horses, speed, rate, luggage, handleClick, image}) {
     return (
@@ -82,6 +103,13 @@ export default function CharriotCard ({id, model, horses, speed, rate, luggage, 
                         <p><strong>Top Speed on paved: </strong>{speed} km/h</p>
                         <p><strong>Luggage:</strong> {luggage}</p>
                         <StarIcon><FontAwesomeIcon icon={faStar}/>  rating {rate}</StarIcon>
+                        <Rating>
+                            <RatingLinks href="#5" title="Donner 5 étoiles">☆</RatingLinks>
+                            <RatingLinks href="#4" title="Donner 4 étoiles">☆</RatingLinks>
+                            <RatingLinks href="#3" title="Donner 3 étoiles">☆</RatingLinks>
+                            <RatingLinks href="#2" title="Donner 2 étoiles">☆</RatingLinks>
+                            <RatingLinks href="#1" title="Donner 1 étoile">☆</RatingLinks>
+                            </Rating>
                         <button id={id} onClick={handleClick}>remove</button>
                     </Description>       
                 </COL1>

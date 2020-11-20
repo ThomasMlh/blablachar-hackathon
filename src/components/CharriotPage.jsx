@@ -7,24 +7,24 @@ import styled from 'styled-components';
 
 const Charcontainer=styled.div`
   display: block;
-  padding:2rem;`;
+  padding:1em;`;
 
 //auto-fill wrap auto if no space available
-//  
+
   const Wrapper = styled.div`
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     column-gap: 1em;
     row-gap: 2em;
     width: 100%;
-    margin: 0 auto;
+    margin-top: 0 auto;
     `;
 
   const BannChar = styled.img`
       width:100%;
       height:35em;
+      margin-top: 10px;
       `;
-
 
 const url = "https://still-ravine-63028.herokuapp.com/chars/"
 

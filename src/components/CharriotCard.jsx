@@ -44,7 +44,13 @@ const Char=styled.img`
 	filter: sepia(100%);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
-    }`;
+    }
+    @media ${device.mobile} { 
+    width: 290px;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+       }`;
 
 const Blockquote=styled.blockquote`
     margin: 1rem 0;

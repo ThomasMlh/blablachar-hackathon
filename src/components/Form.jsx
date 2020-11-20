@@ -258,8 +258,8 @@ render(){
               <Input type="number" name="price" id="price" placeholder="12 oboles" onChange={this.onChange} value={this.state.price} />
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="place-select" >Place :</Label>
-              <Select name="place-select" id="place-select" onChange={this.onChange} value={this.state.seats}>
+              <Label htmlFor="seats" >Place :</Label>
+              <Select name="seats" id="seats" onChange={this.onChange} value={this.state.seats}>
                 {place}
               </Select>
             </DivLabel>
@@ -270,8 +270,8 @@ render(){
               </Select>
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="seats">Chariot :</Label>
-              <Input type="text" name="seats" id="seats" placeholder="Zeus 8" onChange={this.onChange} value={this.state.seats} />
+              <Label htmlFor="char_model">Chariot :</Label>
+              <Input type="text" name="char_model" id="char_model" placeholder="Zeus 8" onChange={this.onChange} value={this.state.char_model} />
             </DivLabel>
             <DivLabel>
               <Label htmlFor="char_image">Chariot Picture :</Label>

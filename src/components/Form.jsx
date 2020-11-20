@@ -69,7 +69,6 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  padding-left: 10%;
   width: 50%;
   text-align: center;
 
@@ -77,8 +76,7 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-  padding-left: 10%;
-  width: 61%;
+  width: 51%;
   text-align: center;
 
 `;
@@ -240,7 +238,7 @@ render(){
             </DivLabel>
             <DivLabel>
             <Label htmlFor="month_departure">Choose Month :</Label>
-            <Select name="month_departure" id="month_departure"onChange={this.onChange} value={this.state.month_departure}>
+            <Select type="text" name="month_departure" id="month_departure"onChange={this.onChange} value={this.state.month_departure}>
                 <option value="Hécatombéion">Hécatombéion</option>
                 <option value="Metageitnion">Metageitnion</option>
                 <option value="Béodromion">Béodromion</option>
@@ -257,7 +255,7 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="price" >Price :</Label>
-              <Input type="text" name="price" id="price" placeholder="12 oboles" onChange={this.onChange} value={this.state.price} />
+              <Input type="number" name="price" id="price" placeholder="12 oboles" onChange={this.onChange} value={this.state.price} />
             </DivLabel>
             <DivLabel>
               <Label htmlFor="place-select" >Place :</Label>

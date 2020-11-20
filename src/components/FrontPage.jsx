@@ -1,6 +1,7 @@
 import "../reset.css";
 import styled from "styled-components";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PageTrip = styled.div`
   width: 100%;
@@ -192,10 +193,14 @@ export default function FrontPage({ profile }) {
     <PageTrip>
       <Card>
         <CardContent>
-          <ImageProfil
-            src={`https://still-ravine-63028.herokuapp.com${profile.profile_image[0].url}`}
-            alt="maximus"
-          />
+          <Link
+            to={{ pathname: `drivers/${profile.id}`, state: { info: profile } }}
+          >
+            <ImageProfil
+              src={`https://still-ravine-63028.herokuapp.com${profile.profile_image[0].url}`}
+              alt="maximus"
+            />
+          </Link>
           <Description>
             <Trajet>
               <From>From : {profile.departure} </From>

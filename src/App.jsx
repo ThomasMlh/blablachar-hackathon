@@ -7,13 +7,11 @@ import Drivers from "./components/Drivers";
 import Form from "./components/Form";
 import CharriotPage from "./components/CharriotPage";
 
-
 import { getProfiles } from "./api/apiCall";
 
 import { Switch, Route } from "react-router-dom";
 import Safety from "./components/Safety";
 import Faq from "./components/Faq";
-
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -31,8 +29,6 @@ function App() {
     <div>
       <Header />
 
-
-
       <Switch>
         <Route path="/post" component={Form} />
         <Route path="/drivers" component={Drivers} />
@@ -40,9 +36,12 @@ function App() {
         <Route path="/safety" component={Safety} />
         <Route path="/faq" component={Faq} />
 
-        <Route exact path="/" render={() =><ListDrivers profile={profiles}/>} />
+        <Route
+          exact
+          path="/"
+          render={() => <ListDrivers profile={profiles} />}
+        />
       </Switch>
-
 
       <Footer />
     </div>

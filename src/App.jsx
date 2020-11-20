@@ -1,12 +1,16 @@
-
 import { useEffect, useState } from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FrontPage from "./components/FrontPage";
+import Drivers from "./components/Drivers";
+import Form from "./components/Form";
+import ChariotPage from "./components/ChariotPage";
 
 import { getProfiles } from "./api/apiCall";
-import Form from "./components/Form";
+
+import { Switch, Route } from "react-router-dom";
+
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -23,7 +27,14 @@ function App() {
   return (
     <div>
       <Header />
-      <Form />
+
+      <Switch>
+        <Route path="/post" component={Form} />
+        <Route path="/drivers" component={Drivers} />
+        <Route path="/chariots" component={ChariotPage} />
+        <Route exact path="/" component={FrontPage} />
+      </Switch>
+
       <Footer />
     </div>
   );

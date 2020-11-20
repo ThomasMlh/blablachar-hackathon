@@ -1,17 +1,6 @@
 import FrontPage from "./FrontPage";
 import styled from "styled-components";
-
-const size = {
-  xs: "320px",
-  sm: "768px",
-  lg: "1200px",
-};
-
-const device = {
-  xs: `(max-width: ${size.xs})`,
-  sm: `(max-width: ${size.sm})`,
-  lg: `(max-width: ${size.lg})`,
-};
+import { device } from "./Device";
 
 const ImageDuHaut = styled.img`
   width: 100%;
@@ -29,7 +18,7 @@ const H1 = styled.h1`
   background-color: #fcf6ee;
   padding-top: 2vh;
   padding-bottom: 4vh;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     font-size: 1.5em;
     padding-bottom: 2vh;
   }
@@ -45,7 +34,7 @@ const FlexBoxHaut = styled.div`
   box-shadow: 3px 3px 3px #797474;
   padding-bottom: 4vh;
   padding-top: 4vh;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     flex-direction: column;
   }
 `;
@@ -62,7 +51,7 @@ const ZonePostATrip = styled.div`
   &:hover {
     background-color: #e4b95e;
   }
-  @media ${device.xs} {
+  @media ${device.mobile} {
     width: 90%;
     margin-bottom: 3vh;
     margin-left: auto;
@@ -78,7 +67,7 @@ const PostATrip = styled.img`
   width: 30%;
   height: 20%;
   padding-left: 1vw;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     width: 20%;
     height: 10%;
   }
@@ -86,12 +75,12 @@ const PostATrip = styled.img`
 
 const ContainerTextPostATrip = styled.h2`
   transition: 0.5s ease;
-  font-size: 2em;
+  font-size: 1.9em;
   margin-top: auto;
   margin-bottom: auto;
   color: black;
   font-family: Cinzel decorative;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     font-size: 1.2em;
   }
 `;
@@ -100,7 +89,7 @@ const ChariotType = styled.img`
   width: 30%;
   height: 20%;
   padding-left: 1vw;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     width: 20%;
     height: 10%;
   }
@@ -108,12 +97,12 @@ const ChariotType = styled.img`
 
 const ContainerTextChariot = styled.h2`
   transition: 0.5s ease;
-  font-size: 2em;
+  font-size: 1.9em;
   margin-top: auto;
   margin-bottom: auto;
   color: black;
   font-family: Cinzel decorative;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     font-size: 1.2em;
   }
 `;
@@ -130,7 +119,7 @@ const ZoneChariot = styled.div`
   &:hover {
     background-color: #e4b95e;
   }
-  @media ${device.xs} {
+  @media ${device.mobile} {
     width: 90%;
     margin-bottom: 3vh;
     margin-left: auto;
@@ -154,7 +143,7 @@ const ZoneSafety = styled.div`
   &:hover {
     background-color: #e4b95e;
   }
-  @media ${device.xs} {
+  @media ${device.mobile} {
     width: 90%;
     margin-bottom: 3vh;
     margin-left: auto;
@@ -170,7 +159,7 @@ const Safety = styled.img`
   width: 30%;
   height: 20%;
   padding-left: 1vw;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     width: 20%;
     height: 10%;
   }
@@ -178,12 +167,12 @@ const Safety = styled.img`
 
 const ContainerTextSafety = styled.h2`
   transition: 0.5s ease;
-  font-size: 2em;
+  font-size: 1.9em;
   margin-top: auto;
   margin-bottom: auto;
   color: black;
   font-family: Cinzel decorative;
-  @media ${device.xs} {
+  @media ${device.mobile} {
     font-size: 1.2em;
   }
 `;
@@ -205,7 +194,7 @@ const Warper = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-  @media ${device.xs} {
+  @media ${device.mobile} {
     grid-template-columns: repeat(1, 1fr);
   }
 `;

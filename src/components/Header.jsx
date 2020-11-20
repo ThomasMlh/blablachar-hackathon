@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { device } from "./Device";
 import { Link } from "react-router-dom";
 
+export const DivFix = styled.div`
+`
+
 export const DivHeader = styled.div`
   background-color: #efdcbe;
   display: flex;
@@ -42,7 +45,8 @@ export const A = styled(Link)`
     transition: 0.6s;
   }
   @media ${device.mobile} {
-    padding-right: 0vw;
+    padding-right: 3vw;
+    font-size: 3.5vh;
   }
 `;
 
@@ -68,6 +72,12 @@ export const ImgBan = styled.img`
   background-repeat: repeat;
   width: 100%;
   background-color: rgba(239, 220, 190, 0.29);
+  @media ${device.mobile} {
+    width: 300%;
+    margin:0 -200.875% ;
+
+  }
+  
 `;
 
 export const BLink = styled(Link)`
@@ -77,7 +87,7 @@ export const BLink = styled(Link)`
 
 export default function Header() {
   return (
-    <div>
+    <DivFix>
       <DivHeader>
         <DivLogo>
           <Link to="/">
@@ -101,6 +111,6 @@ export default function Header() {
       <div>
         <ImgBan src="/images/banniere.png" alt="banniere" />
       </div>
-    </div>
+    </DivFix>
   );
 }

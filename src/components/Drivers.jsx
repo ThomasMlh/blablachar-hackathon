@@ -1,5 +1,6 @@
-import { useLocation } from "react-router";
+import { useLocation, useEffect } from "react-router";
 import styled from "styled-components";
+import React from "react";
 
 const Component = styled.div`
   background-color: #fef7e7;
@@ -171,6 +172,11 @@ export default function Drivers() {
   let location = useLocation();
   const info = location.state.info;
   console.log(info);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Component>
       <ProfilInfo>

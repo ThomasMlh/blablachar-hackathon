@@ -2,7 +2,11 @@ import React from "react";
 import { useLocation } from "react-router";
 
 import styled from "styled-components";
+<<<<<<< HEAD
 import { device } from "./Device";
+=======
+import { useState, useEffect } from "react";
+>>>>>>> 6fb7d622505c5934aa31dc38022b068877b01ac1
 
 const Component = styled.div`
   background-color: #fef7e7;
@@ -174,9 +178,21 @@ const StyledButton = styled.button`
 export default function Drivers() {
   let location = useLocation();
   const info = location.state.info;
+
+  const [comment, setComment] = useState({
+    name: "",
+    comment: "",
+  });
+
+  const handleChange = (e) => {
+    setComment({ ...comment, [e.target.id]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   console.log(location.state);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
@@ -216,24 +232,26 @@ export default function Drivers() {
       <Title>Comments</Title>
       <Comments>
         <Com>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua." - TONTON
-          TOTO
-        </Com>
-        <Com>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua." - TATA
-          YOYO
+          {comment.comment} - {comment.name}
         </Com>
       </Comments>
       <div>
         <SndTitle>Leave a comment</SndTitle>
-        <StyledForm>
+        <StyledForm onSubmit={handleSubmit}>
           <label>
-            <StyledInput type="text" placeholder="Your name" />
+            <StyledInput
+              onChange={handleChange}
+              id="name"
+              type="text"
+              placeholder="Your name"
+            />
           </label>
           <label>
-            <StyledTextarea placeholder="Leave a comment..."></StyledTextarea>
+            <StyledTextarea
+              onChange={handleChange}
+              id="comment"
+              placeholder="Leave a comment..."
+            ></StyledTextarea>
           </label>
           <StyledButton type="submit" value="Post">
             Post

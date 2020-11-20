@@ -35,7 +35,7 @@ const GameCard=styled.figure`
 const Char=styled.img`
     display: flex;
     width: auto;
-    height: 250px;
+    height: 260px;
     border-radius: 1rem;
     border: solid 2px black;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -48,6 +48,7 @@ const Char=styled.img`
 
 const Blockquote=styled.blockquote`
     margin: 1rem 0;
+    margin-bottom: 20px;
     font-weight: bold;
     font-family: "cinzel decorative";
     font-size: 1.8em;
@@ -60,7 +61,7 @@ const Col1=styled.div`
     margin-top: 2px;
     width: 350px;
     height: 280px;
-    line-height: 10px;
+    line-height: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;

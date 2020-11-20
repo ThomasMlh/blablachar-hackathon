@@ -50,24 +50,25 @@ export default function ChariotList () {
   const [ charList, setCharList ] = useState([]);
   const [ bestRating, setbestRating ] = useState(false);
 
-  useEffect(() => {
-    fetchChar();
-  }, [charList]);
-
-  const handleClick = (e) => {
-    const tempCharList = [...charList]
-    const index = tempCharList.findIndex(item => item.id === parseInt(e.target.id))
-    const remove = window.confirm("You want to remove this char from the list?")
-    if (remove) {
-        tempCharList.splice(index, 1)
-        setCharList(tempCharList)
-    }
-}
-
   const fetchChar = () => {
     axios.get(url)
     .then(res => setCharList(res.data));
   };
+
+  useEffect(() => {
+    fetchChar();
+  }, []);
+
+   
+  const handleClick = (e) => {
+    const tempList = [...charList];
+    const index = tempList.findIndex(item => item.id === parseInt(e.target.id));
+    const remove = window.confirm("You want to remove this char from the list?")
+    if (remove) {
+        tempList.splice(index, 1)
+        setCharList(tempList)
+    }
+}
 
   const handleBestRating = () => {
     setbestRating(!bestRating);

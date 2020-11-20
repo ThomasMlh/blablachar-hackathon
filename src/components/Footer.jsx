@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {device} from "./Device"
+import {Link} from "react-router-dom"
 
 const DivFooter = styled.div`
 display: flex;
@@ -18,7 +19,7 @@ margin-top: -11px;
 }
 
 `
-const A = styled.a`
+const A = styled(Link)`
   text-decoration: none;
   color : white;
   &:hover{
@@ -37,7 +38,7 @@ export default function Footer(){
     return <div>
         <ImgBan src="/images/banniere.png" alt="banniere"/>
     <DivFooter>
-        <A href="#1">Safety instructions</A>
+        <A to="safety">Safety instructions</A>
         <A href="#2">FAQ</A>
         <A href="#3">Contact Us</A>
     </DivFooter>

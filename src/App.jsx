@@ -8,7 +8,11 @@ import Form from "./components/Form";
 import CharriotPage from "./components/CharriotPage";
 
 import { getProfiles } from "./api/apiCall";
+
 import { Switch, Route } from "react-router-dom";
+import Safety from "./components/Safety";
+import Faq from "./components/Faq";
+
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -25,12 +29,17 @@ function App() {
   return (
     <div>
       <Header />
+
       <Switch>
         <Route path="/post" component={Form} />
         <Route path="/drivers" component={Drivers} />
         <Route path="/chariots" component={CharriotPage} />
+        <Route path="/safety" component={Safety} />
+        <Route path="/faq" component={Faq} />
+
         <Route exact path="/" component={FrontPage} />
       </Switch>
+
       <Footer />
     </div>
   );

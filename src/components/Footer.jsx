@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {device} from "./Device"
+import {Link} from "react-router-dom"
 
 const DivFooter = styled.div`
 display: flex;
@@ -18,7 +19,7 @@ margin-top: -11px;
 }
 
 `
-const A = styled.a`
+const A = styled(Link)`
   text-decoration: none;
   color : white;
   &:hover{
@@ -26,6 +27,13 @@ const A = styled.a`
     transition: 0.6s;}
 `
 
+const Alink = styled.a`
+  text-decoration: none;
+  color : white;
+  &:hover{
+    color:black;
+    transition: 0.6s;}
+`
 export const ImgBan = styled.img`
 height: 5vh;
 background-repeat: repeat;
@@ -37,9 +45,9 @@ export default function Footer(){
     return <div>
         <ImgBan src="/images/banniere.png" alt="banniere"/>
     <DivFooter>
-        <A href="#1">Safety instructions</A>
-        <A href="#2">FAQ</A>
-        <A href="#3">Contact Us</A>
+        <A to="safety">Safety instructions</A>
+        <A to="faq">FAQ</A>
+        <Alink href="https://lapierreetlemarbre.com/vente-en-gros/" target="blank">Contact Us</Alink>
     </DivFooter>
     </div>
 }

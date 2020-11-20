@@ -68,11 +68,6 @@ export const ImgBan = styled.img`
   background-repeat: repeat;
   width: 100%;
   background-color: rgba(239, 220, 190, 0.29);
-  @media ${device.mobile} {
-    width: 300%;
-    margin:0 -200% ;
-  }
-  
 `;
 
 export const BLink = styled(Link)`
@@ -99,6 +94,7 @@ export default function Header() {
             </BLink>
           </section>
         </DivLogo>
+        <A to="drivers">Drivers</A>
         <A to="post">Post a trip</A>
         <A to="chariots">Chariots</A>
       </DivHeader>

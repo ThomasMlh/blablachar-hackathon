@@ -1,5 +1,6 @@
 import FrontPage from "./FrontPage";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const size = {
   xs: "320px",
@@ -50,7 +51,7 @@ const FlexBoxHaut = styled.div`
   }
 `;
 
-const ZonePostATrip = styled.div`
+const ZonePostATrip = styled(Link)`
   border-radius: 20px;
   box-shadow: 3px 5px 3px #797474;
   display: block;
@@ -59,6 +60,7 @@ const ZonePostATrip = styled.div`
   transition: 0.5s ease;
   display: flex;
   flex-direction: row;
+  text-decoration: none;
   &:hover {
     background-color: #e4b95e;
   }
@@ -118,7 +120,7 @@ const ContainerTextChariot = styled.h2`
   }
 `;
 
-const ZoneChariot = styled.div`
+const ZoneChariot = styled(Link)`
   border-radius: 20px;
   box-shadow: 3px 5px 3px #797474;
   display: block;
@@ -127,6 +129,7 @@ const ZoneChariot = styled.div`
   transition: 0.5s ease;
   display: flex;
   flex-direction: row;
+  text-decoration: none;
   &:hover {
     background-color: #e4b95e;
   }
@@ -142,7 +145,7 @@ const ZoneChariot = styled.div`
   }
 `;
 
-const ZoneSafety = styled.div`
+const ZoneSafety = styled(Link)`
   border-radius: 20px;
   box-shadow: 3px 5px 3px #797474;
   display: block;
@@ -151,6 +154,7 @@ const ZoneSafety = styled.div`
   transition: 0.5s ease;
   display: flex;
   flex-direction: row;
+  text-decoration: none;
   &:hover {
     background-color: #e4b95e;
   }
@@ -168,13 +172,14 @@ const ZoneSafety = styled.div`
 
 const Safety = styled.img`
   width: 30%;
-  height: 20%;
+  height: 40%;
   padding-left: 1vw;
   @media ${device.xs} {
     width: 20%;
     height: 10%;
   }
 `;
+
 
 const ContainerTextSafety = styled.h2`
   transition: 0.5s ease;
@@ -224,19 +229,19 @@ const ListDrivers = ({ profile }) => {
     <div>
       <ImageDuHaut src="/photos/charTableau.jpg" alt="Course de char" />
       <FlexBoxHaut>
-        <ZonePostATrip>
+        <ZonePostATrip to="post">
           <PostATrip src="/photos/suitcase.png" alt="Post a Trip"></PostATrip>
           <ContainerTextPostATrip>Post a trip</ContainerTextPostATrip>
         </ZonePostATrip>
-        <ZoneChariot>
+        <ZoneChariot to="chariots">
           <ChariotType src="/photos/cartwheel.png" alt="Char"></ChariotType>
           <ContainerTextChariot>Chariots</ContainerTextChariot>
-        </ZoneChariot>
-        <ZoneSafety>
+        </ZoneChariot>  
+        <ZoneSafety to="safety">
           <Safety
             src="/photos/hazard-sign.png"
-            alt="Safety instructions"
-          ></Safety>
+            alt="Safety instructions">
+          </Safety>
           <ContainerTextSafety>Safety instructions</ContainerTextSafety>
         </ZoneSafety>
       </FlexBoxHaut>

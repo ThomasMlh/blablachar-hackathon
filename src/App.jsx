@@ -8,7 +8,9 @@ import Form from "./components/Form";
 import ChariotPage from "./components/ChariotPage";
 
 import { getProfiles } from "./api/apiCall";
+
 import { Switch, Route } from "react-router-dom";
+
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -25,12 +27,14 @@ function App() {
   return (
     <div>
       <Header />
+
       <Switch>
         <Route path="/post" component={Form} />
         <Route path="/drivers" component={Drivers} />
         <Route path="/chariots" component={ChariotPage} />
         <Route exact path="/" component={FrontPage} />
       </Switch>
+
       <Footer />
     </div>
   );

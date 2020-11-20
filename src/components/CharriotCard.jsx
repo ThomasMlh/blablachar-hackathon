@@ -26,10 +26,10 @@ const GameCard=styled.figure`
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     @media ${device.mobile} {
     flex-direction: column; 
-    width: 290px;
-    height: 550px;
-    justify-content: center;
+    width: 77vw;
+    height: 36vh;
     align-items: center;
+    padding-top: 40px;
        }`;
 
 const Char=styled.img`
@@ -44,7 +44,13 @@ const Char=styled.img`
 	filter: sepia(100%);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
-    }`;
+    }
+    @media ${device.mobile} { 
+    width: 22vh;
+    height: 17vh;
+    justify-content: center;
+    align-items: center;
+       }`;
 
 const Blockquote=styled.blockquote`
     margin: 1rem 0;
@@ -54,7 +60,8 @@ const Blockquote=styled.blockquote`
     font-size: 1.8em;
     @media ${device.mobile} {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 2vh;
+    margin-bottom: 2vh;
        }`;
 
 const Col1=styled.div`
@@ -78,11 +85,16 @@ const StarIcon=styled.div`
     margin-top: 40px;
     @media ${device.mobile} {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1em;
+    padding-bottom: 2vh;
+    margin-top: 1vh;
+ 
        }`;
 
 const Description=styled.div`
     @media ${device.mobile} {
+        display: flex;
+        flex-direction : column;
     text-align: center;
     font-size: 0.8em;
        }`;
@@ -105,24 +117,36 @@ const StyledButton = styled.button`
     border: 2px solid #e9c47b;
     cursor: pointer;
     }
+    @media ${device.mobile} {
+    margin-bottom : 0;
+    height : 0vh;
+    padding-bottom: 4vh;
+       }
     `;
 
+    const DivDescription = styled.div`
+    @media ${device.mobile} {
+    text-align: center;
+    font-size: 0.8em;
+       }
+    `;
 export default function CharriotCard ({id, model, horses, speed, rate, luggage, handleClick, image}) {
     return (
         <GameCard>
             <Char src={`https://still-ravine-63028.herokuapp.com${image[0].url}`} alt={model} />
-            <figcaption>
                 <Col1>
                     <Blockquote>{model}</Blockquote>
                     <Description>
+                        <DivDescription>
                         <h2>{horses} horses</h2>
                         <p><strong>Top Speed on paved: </strong>{speed} km/h</p>
                         <p><strong>Luggage:</strong> {luggage}</p>
+                        </DivDescription>
                         <StarIcon><FontAwesomeIcon icon={faStar}/>  rating {rate}</StarIcon>
                         <StyledButton id={id} onClick={handleClick}>Remove from my List</StyledButton>
                     </Description>       
                 </Col1>
-            </figcaption>
+           
         </GameCard>
     )
 }

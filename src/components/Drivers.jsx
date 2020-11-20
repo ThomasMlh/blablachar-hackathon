@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Component = styled.div`
   background-color: #fef7e7;
@@ -184,6 +184,11 @@ export default function Drivers() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  console.log(location.state);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Component>

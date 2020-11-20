@@ -2,17 +2,21 @@ import styled from "styled-components";
 import { device } from "./Device";
 import { Link } from "react-router-dom";
 
+export const DivFix = styled.div``;
+
 export const DivHeader = styled.div`
   background-color: #efdcbe;
   display: flex;
   justify-content: space-around;
+  padding-top: 2vh;
   align-items: center;
   color: white;
   font-size: 4vh;
   text-shadow: 1px 1px 2px black;
   height: 12vh;
   @media ${device.mobile} {
-    height: 15vh;
+    height: 10vh;
+    padding-top: 0;
     font-size: 17px;
   }
 `;
@@ -42,7 +46,8 @@ export const A = styled(Link)`
     transition: 0.6s;
   }
   @media ${device.mobile} {
-    padding-right: 0vw;
+    padding-right: 3vw;
+    font-size: 2.5vh;
   }
 `;
 
@@ -53,6 +58,7 @@ export const PLogo = styled.p`
   padding-left: 2vh;
   @media ${device.mobile} {
     display: none;
+    padding-top: 0;
   }
 `;
 export const PDescription = styled.p`
@@ -68,6 +74,11 @@ export const ImgBan = styled.img`
   background-repeat: repeat;
   width: 100%;
   background-color: rgba(239, 220, 190, 0.29);
+  @media ${device.mobile} {
+    width: 300%;
+    margin: 0 -200.875%;
+    height: 3vh;
+  }
 `;
 
 export const BLink = styled(Link)`
@@ -77,7 +88,7 @@ export const BLink = styled(Link)`
 
 export default function Header() {
   return (
-    <div>
+    <DivFix>
       <DivHeader>
         <DivLogo>
           <Link to="/">
@@ -94,13 +105,16 @@ export default function Header() {
             </BLink>
           </section>
         </DivLogo>
-        <A to="drivers">Drivers</A>
-        <A to="post">Post a trip</A>
-        <A to="chariots">Chariots</A>
+        <A to={(location) => ({ ...location, pathname: "/post" })}>
+          Post a trip
+        </A>
+        <A to={(location) => ({ ...location, pathname: "/chariots" })}>
+          Chariots
+        </A>
       </DivHeader>
       <div>
         <ImgBan src="/images/banniere.png" alt="banniere" />
       </div>
-    </div>
+    </DivFix>
   );
 }

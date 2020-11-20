@@ -116,19 +116,48 @@ const place = [];
       price: "",
       seats:"",
       luggage: "",
+      char_model:"",
+      char_image : [{
+        url:""}
+      ],
+      profile_image : [{
+        url:""}
+      ],
     }
   }
 
 
   onChange = (e) =>{
-    this.setState({
-      [e.target.name] : e.target.value
-    });
+    switch(e.target.name) {
+      
+        case "profile_image":
+        const new_profile_image = [{
+          url: e.target.value
+        }]
+        this.setState({
+          profile_image: new_profile_image
+        });
+        break;
+      case "char_image":
+        const new_char_image = [{
+          url: e.target.value
+        }]
+        this.setState({
+          char_image: new_char_image
+        });
+        break;
+      
+      default:
+        this.setState({
+          [e.target.name] : e.target.value
+        });
+    }
   };
 
   
   submitForm = (e) => {
     e.preventDefault();
+    console.log(this.state)
     const config = {
       method: "POST",
       headers: {
@@ -174,14 +203,14 @@ render(){
               <Input type="text" name="arrival" id="arrival" onChange={this.onChange} value={this.state.arrival}/>
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="start">Choose Day :</Label>
-              <Select name="start" id="start" onChange={this.onChange} value={this.state.month_departure}>
+              <Label htmlFor="day_departure">Choose Day :</Label>
+              <Select name="stday_departureart" id="day_departure" onChange={this.onChange} value={this.state.month_departure}>
                 {day}
               </Select>
             </DivLabel>
             <DivLabel>
-            <Label htmlFor="start">Choose Month :</Label>
-            <Select name="month" id="month"onChange={this.onChange} value={this.state.month_departure}>
+            <Label htmlFor="month_departure">Choose Month :</Label>
+            <Select name="month_departure" id="month_departure"onChange={this.onChange} value={this.state.month_departure}>
                 <option value="Hécatombéion">Hécatombéion</option>
                 <option value="Metageitnion">Metageitnion</option>
                 <option value="Béodromion">Béodromion</option>
@@ -214,15 +243,15 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="chariot">Chariot :</Label>
-              <Input type="text" name="chariot" id="chariot" />
+              <Input type="text" name="chariot" id="chariot" onChange={this.onChange} value={this.state.month_departure} />
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="user_photo">User photo :</Label>
-              <Input type="text" name="user_photo" id="user_photo" />
+              <Label htmlFor="char_image">User photo :</Label>
+              <Input type="text" name="char_image" id="char_image" onChange={this.onChange} value={this.char_image}  />
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="user_chariot">Chariot picture :</Label>
-              <Input type="text" name="user_chariot" id="user_chariot" />
+              <Label htmlFor="profile_image">Chariot picture :</Label>
+              <Input type="text" name="profile_image" id="profile_image" onChange={this.onChange} value={this.profile_image} />
             </DivLabel>
             <StyledButton type="submit" value="Send" />
           </fieldset>

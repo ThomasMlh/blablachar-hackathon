@@ -178,15 +178,26 @@ export default function Drivers() {
     comment: "",
   });
 
+  const [comments, setComments] = useState([]);
+
   const handleChange = (e) => {
     setComment({ ...comment, [e.target.id]: e.target.value });
   };
   const handleSubmit = (e) => {
+    //On récupère les valeurs de comment, qu'on met dans une key myValueInLocalStorage, on doit le mettre en string sinon il prend pas
     e.preventDefault();
+    localStorage.setItem(
+      "myValueInLocalStorage",
+      JSON.stringify([...comments, comment])
+    );
+    setComments([...comments, comment]);
   };
-  console.log(location.state);
 
   useEffect(() => {
+    //on repasse les données en tableau, et si ya qqchose on affiche, si ya rien, tableau vide
+    setComments(
+      JSON.parse(localStorage.getItem("myValueInLocalStorage")) || []
+    );
     window.scrollTo(0, 0);
   }, []);
 
@@ -225,13 +236,17 @@ export default function Drivers() {
       </ProfilInfo>
       <Title>Comments</Title>
       <Comments>
-        <Com>
-          {comment.comment} - {comment.name}
-        </Com>
+        {comments.map((comm) => {
+          return (
+            <Com>
+              {comm.comment} - {comm.name}
+            </Com>
+          );
+        })}
       </Comments>
       <div>
         <SndTitle>Leave a comment</SndTitle>
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm>
           <label>
             <StyledInput
               onChange={handleChange}
@@ -247,7 +262,7 @@ export default function Drivers() {
               placeholder="Leave a comment..."
             ></StyledTextarea>
           </label>
-          <StyledButton type="submit" value="Post">
+          <StyledButton type="submit" value="Post" onClick={handleSubmit}>
             Post
           </StyledButton>
         </StyledForm>

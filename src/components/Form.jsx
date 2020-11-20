@@ -192,15 +192,15 @@ render(){
           <fieldset>
             <DivLabel>
               <Label htmlFor="name">Name :</Label>
-              <Input type="text" name="name" id="name" onChange={this.onChange} value={this.state.name} />
+              <Input type="text" name="name" id="name" placeholder="Cratos" onChange={this.onChange} value={this.state.name} />
             </DivLabel>
             <DivLabel>
               <Label htmlFor="departure">Departure:</Label>
-              <Input type="text" name="departure" id="departure" onChange={this.onChange} value={this.state.departure}/>
+              <Input type="text" name="departure" id="departure" placeholder="Delphes"onChange={this.onChange} value={this.state.departure}/>
             </DivLabel>
             <DivLabel>
               <Label htmlFor="arrival">Arrival :</Label>
-              <Input type="text" name="arrival" id="arrival" onChange={this.onChange} value={this.state.arrival}/>
+              <Input type="text" name="arrival" id="arrival" placeholder="Sparte"onChange={this.onChange} value={this.state.arrival}/>
             </DivLabel>
             <DivLabel>
               <Label htmlFor="day_departure">Choose Day :</Label>
@@ -227,7 +227,7 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="price" >Price :</Label>
-              <Input type="text" name="price" id="price" onChange={this.onChange} value={this.state.price} />
+              <Input type="text" name="price" id="price" placeholder="12 oboles" onChange={this.onChange} value={this.state.price} />
             </DivLabel>
             <DivLabel>
               <Label htmlFor="place-select" >Place :</Label>
@@ -243,7 +243,7 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="chariot">Chariot :</Label>
-              <Input type="text" name="chariot" id="chariot" onChange={this.onChange} value={this.state.month_departure} />
+              <Input type="text" name="chariot" id="chariot" placeholder="Zeus 8" onChange={this.onChange} value={this.state.month_departure} />
             </DivLabel>
             <DivLabel>
               <Label htmlFor="char_image">User photo :</Label>

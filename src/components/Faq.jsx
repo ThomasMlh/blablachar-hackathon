@@ -37,7 +37,7 @@ export default function Faq() {
           Internet is not born yet (like JC), you have to send us a marble
           tablet with your description. We will add it as soon as possible.
         </P>
-        <P>Adress : Behind The Moussaka's shop. Ask </P>
+        <P>Adress : Behind The Moussaka's shop. Ask Tibulle. </P>
       </section>
       <section>
         <H2>How can i reserv a travel ?</H2>

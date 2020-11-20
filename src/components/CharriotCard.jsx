@@ -70,10 +70,10 @@ const Description=styled.div`
     font-size: 0.8em;
        }  `;
 
-export default function CharriotCard ({id, model, horses, speed, rate, luggage, handleClick}) {
+export default function CharriotCard ({id, model, horses, speed, rate, luggage, handleClick, image}) {
     return (
         <GameCard>
-            <Char src={"./Photos/Aphrodite100.jpg"} alt={""} />
+            <Char src={`https://still-ravine-63028.herokuapp.com/${image}`} alt={""} />
             <figcaption>
                 <COL1>
                     <Blockquote>{model}</Blockquote>

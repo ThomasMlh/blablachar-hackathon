@@ -41,7 +41,7 @@ console.log(charList)
       .filter((char) => {
         return !bestRating || (char.rate) > 3.8
       })
-      .map(({id, model, horses, speed, rate, luggage}) => {
+      .map(({id, model, horses, speed, rate, luggage, image}) => {
       return <CharriotCard
       key={id} 
       id={id} 
@@ -50,6 +50,7 @@ console.log(charList)
       speed={speed} 
       rate={rate}
       luggage={luggage}
+      image={image}
       handleClick={handleClick}
       />
       })};

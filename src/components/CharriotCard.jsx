@@ -16,7 +16,7 @@ const GameCard=styled.figure`
     border-radius: 1rem;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
     font-size: 1.2rem;
-    font-family:  "Sansation";
+    font-family:  "cinzel decorative";
     color:black;
     background: linear-gradient(
     0deg,
@@ -49,7 +49,7 @@ const Char=styled.img`
 const Blockquote=styled.blockquote`
     margin: 1rem 0;
     font-weight: bold;
-    font-family: "Sansation";
+    font-family: "cinzel decorative";
     font-size: 1.8em;
     @media ${device.mobile} {
     text-align: center;

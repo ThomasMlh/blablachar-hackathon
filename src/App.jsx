@@ -10,6 +10,7 @@ import ChariotPage from "./components/ChariotPage";
 import { getProfiles } from "./api/apiCall";
 
 import { Switch, Route } from "react-router-dom";
+import Safety from "./components/Safety";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/post" component={Form} />
         <Route path="/drivers" component={Drivers} />
         <Route path="/chariots" component={ChariotPage} />
+        <Route path="/safety" component={Safety} />
         <Route exact path="/" component={FrontPage} />
       </Switch>
 

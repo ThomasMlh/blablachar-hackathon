@@ -1,6 +1,18 @@
 import FrontPage from "./FrontPage";
 import styled from "styled-components";
 
+const size = {
+  xs: "320px",
+  sm: "768px",
+  lg: "1200px",
+};
+
+const device = {
+  xs: `(max-width: ${size.xs})`,
+  sm: `(max-width: ${size.sm})`,
+  lg: `(max-width: ${size.lg})`,
+};
+
 const ImageDuHaut = styled.img`
   width: 100%;
   box-shadow: 3px 5px 5px #797474;
@@ -17,6 +29,10 @@ const H1 = styled.h1`
   background-color: #fcf6ee;
   padding-top: 2vh;
   padding-bottom: 4vh;
+  @media ${device.xs} {
+    font-size: 1.5em;
+    padding-bottom: 2vh;
+  }
 `;
 
 const FlexBoxHaut = styled.div`
@@ -29,6 +45,9 @@ const FlexBoxHaut = styled.div`
   box-shadow: 3px 3px 3px #797474;
   padding-bottom: 4vh;
   padding-top: 4vh;
+  @media ${device.xs} {
+    flex-direction: column;
+  }
 `;
 
 const ZonePostATrip = styled.div`
@@ -43,12 +62,26 @@ const ZonePostATrip = styled.div`
   &:hover {
     background-color: #e4b95e;
   }
+  @media ${device.xs} {
+    width: 90%;
+    margin-bottom: 3vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f1e1bd;
+    &:hover {
+      background-color: #f1e1bd;
+    }
+  }
 `;
 
 const PostATrip = styled.img`
   width: 30%;
   height: 20%;
   padding-left: 1vw;
+  @media ${device.xs} {
+    width: 20%;
+    height: 10%;
+  }
 `;
 
 const ContainerTextPostATrip = styled.h2`
@@ -58,12 +91,19 @@ const ContainerTextPostATrip = styled.h2`
   margin-bottom: auto;
   color: black;
   font-family: Cinzel decorative;
+  @media ${device.xs} {
+    font-size: 1.2em;
+  }
 `;
 
 const ChariotType = styled.img`
   width: 30%;
   height: 20%;
   padding-left: 1vw;
+  @media ${device.xs} {
+    width: 20%;
+    height: 10%;
+  }
 `;
 
 const ContainerTextChariot = styled.h2`
@@ -73,6 +113,9 @@ const ContainerTextChariot = styled.h2`
   margin-bottom: auto;
   color: black;
   font-family: Cinzel decorative;
+  @media ${device.xs} {
+    font-size: 1.2em;
+  }
 `;
 
 const ZoneChariot = styled.div`
@@ -86,6 +129,16 @@ const ZoneChariot = styled.div`
   flex-direction: row;
   &:hover {
     background-color: #e4b95e;
+  }
+  @media ${device.xs} {
+    width: 90%;
+    margin-bottom: 3vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f1e1bd;
+    &:hover {
+      background-color: #f1e1bd;
+    }
   }
 `;
 
@@ -101,12 +154,26 @@ const ZoneSafety = styled.div`
   &:hover {
     background-color: #e4b95e;
   }
+  @media ${device.xs} {
+    width: 90%;
+    margin-bottom: 3vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f1e1bd;
+    &:hover {
+      background-color: #f1e1bd;
+    }
+  }
 `;
 
 const Safety = styled.img`
   width: 30%;
   height: 20%;
   padding-left: 1vw;
+  @media ${device.xs} {
+    width: 20%;
+    height: 10%;
+  }
 `;
 
 const ContainerTextSafety = styled.h2`
@@ -116,6 +183,9 @@ const ContainerTextSafety = styled.h2`
   margin-bottom: auto;
   color: black;
   font-family: Cinzel decorative;
+  @media ${device.xs} {
+    font-size: 1.2em;
+  }
 `;
 
 const Fond = styled.div`
@@ -135,6 +205,9 @@ const Warper = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  @media ${device.xs} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const Trait1 = styled.div`

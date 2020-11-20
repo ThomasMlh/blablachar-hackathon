@@ -47,15 +47,14 @@ export const A = styled(Link)`
 `;
 
 export const PLogo = styled.p`
-
-text-align: center;
-padding-top: 3vh;
-font-size: 10vh;
-padding-left: 2vh;
-@media ${device.mobile} {
-display: none    }
-
-`
+  text-align: center;
+  padding-top: 3vh;
+  font-size: 10vh;
+  padding-left: 2vh;
+  @media ${device.mobile} {
+    display: none;
+  }
+`;
 export const PDescription = styled.p`
   text-align: center;
   font-size: 25px;
@@ -85,11 +84,14 @@ export default function Header() {
             <ImgLogo src="/images/logo.png" alt="logo" />
           </Link>
           <section>
-          <BLink to="/">
-          <PLogo>BlaBlaChar
-          <PDescription>“The best way to travel around Athens”</PDescription>
-          </PLogo>
-          </BLink>
+            <BLink to="/">
+              <PLogo>
+                BlaBlaChar
+                <PDescription>
+                  “The best way to travel around Athens”
+                </PDescription>
+              </PLogo>
+            </BLink>
           </section>
         </DivLogo>
         <A to="post">Post a trip</A>

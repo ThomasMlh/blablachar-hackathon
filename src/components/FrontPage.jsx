@@ -86,8 +86,7 @@ const ImageProfil = styled.img`
   border: solid black;
   @media ${device.xs} {
     width: 50vw;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 8.5vw;
     margin-top: 7vh;
   }
 `;
@@ -232,7 +231,7 @@ const DetailCardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 0vw;
+  padding-left: 2vw;
   @media ${device.xs} {
     text-align: center;
     font-size: 1em;

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import FrontPage from "./components/FrontPage";
 import ListDrivers from "./components/ListDrivers";
 import Drivers from "./components/Drivers";
 import Form from "./components/Form";
@@ -32,7 +31,6 @@ function App() {
     <div>
       <Header />
 
-      <ListDrivers profile={profiles} />
 
 
       <Switch>
@@ -42,7 +40,7 @@ function App() {
         <Route path="/safety" component={Safety} />
         <Route path="/faq" component={Faq} />
 
-        <Route exact path="/" component={FrontPage} />
+        <Route exact path="/" render={() =><ListDrivers profile={profiles}/>} />
       </Switch>
 
 

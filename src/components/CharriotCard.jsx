@@ -73,12 +73,12 @@ const Description=styled.div`
 export default function CharriotCard ({id, model, horses, speed, rate, luggage, handleClick, image}) {
     return (
         <GameCard>
-            <Char src={`https://still-ravine-63028.herokuapp.com/${image}`} alt={""} />
+            <Char src={`https://still-ravine-63028.herokuapp.com${image[0].url}`} alt={model} />
             <figcaption>
                 <COL1>
                     <Blockquote>{model}</Blockquote>
                     <Description>
-                        <h2>{horses}</h2>
+                        <h2>{horses} horses</h2>
                         <p><strong>Top Speed on paved: </strong>{speed} km/h</p>
                         <p><strong>Luggage:</strong> {luggage}</p>
                         <StarIcon><FontAwesomeIcon icon={faStar}/>  rating {rate}</StarIcon>

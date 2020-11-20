@@ -2,6 +2,29 @@ import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CharriotCard from './CharriotCard';
+import styled from 'styled-components';
+
+
+const Charcontainer=styled.div`
+  display: block;
+  padding:2rem;`;
+
+//auto-fill wrap auto if no space available
+//  
+  const Wrapper = styled.div`
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    column-gap: 1em;
+    row-gap: 2em;
+    width: 100%;
+    margin: 0 auto;
+    `;
+
+  const BannChar = styled.img`
+      width:100%;
+      height:35em;
+      `;
+
 
 const url = "https://still-ravine-63028.herokuapp.com/chars/"
 
@@ -35,8 +58,10 @@ export default function ChariotList () {
 console.log(charList)
   return (
     <div>
+      <BannChar src={"./Photos/Bannierechar.jpg"} alt={""}/>
+    <Charcontainer>
       <button onClick={handleBestRating}>{bestRating ? "Best Chars" : "All Chars"}</button>
-      <div>
+      <Wrapper>
       {charList
       .filter((char) => {
         return !bestRating || (char.rate) > 3.8
@@ -54,7 +79,8 @@ console.log(charList)
       handleClick={handleClick}
       />
       })};
-      </div>
+      </Wrapper>
+    </Charcontainer>
     </div>
   );
 }

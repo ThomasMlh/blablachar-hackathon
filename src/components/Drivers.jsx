@@ -1,12 +1,7 @@
-import React from "react";
 import { useLocation } from "react-router";
-
 import styled from "styled-components";
-<<<<<<< HEAD
-import { device } from "./Device";
-=======
 import { useState, useEffect } from "react";
->>>>>>> 6fb7d622505c5934aa31dc38022b068877b01ac1
+import { device } from "./Device";
 
 const Component = styled.div`
   background-color: #fef7e7;

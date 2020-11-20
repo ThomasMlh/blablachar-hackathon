@@ -81,20 +81,17 @@ export default function Header() {
     <div>
       <DivHeader>
         <DivLogo>
-          <Link to="chariots">
+          <Link to="/">
             <ImgLogo src="/images/logo.png" alt="logo" />
           </Link>
           <section>
-          <BLink to="chariots">
+          <BLink to="/">
           <PLogo>BlaBlaChar
           <PDescription>“The best way to travel around Athens”</PDescription>
           </PLogo>
           </BLink>
-
-
           </section>
         </DivLogo>
-        <A to="drivers">Drivers</A>
         <A to="post">Post a trip</A>
         <A to="chariots">Chariots</A>
       </DivHeader>

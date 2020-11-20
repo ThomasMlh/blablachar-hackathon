@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./Device";
 import React, { Component } from "react";
 
 const Div = styled.div`
@@ -9,6 +10,9 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media ${device.mobile} {
+    height: 73.3vh
+  }
 `;
 
 const Formulaire = styled.form`
@@ -20,6 +24,11 @@ const Formulaire = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media ${device.mobile} {
+  height: 47vh;
+  width: 45vh;
+  
+  }
   
 `;
 
@@ -29,6 +38,9 @@ const DivLabel = styled.div`
   margin: 5px 0;
   width: 100%;
   text-align: start;
+  @media ${device.mobile} {
+
+  }
 `;
 
 const H1 = styled.h1`
@@ -36,7 +48,10 @@ const H1 = styled.h1`
   margin-bottom: 3vh;
   font-size : 8vh;
   text-shadow: 1px 1px 2px black;
-
+  @media ${device.mobile} {
+    font-size: 4vh;
+    padding-top: 4vh
+  }
 `;
 
 const Label = styled.label`
@@ -45,16 +60,24 @@ const Label = styled.label`
   display: inline-block;
   margin-right: 10px;
   width: 30%;
+  @media ${device.mobile} {
+  height: 3vh;
+  width:14vh;
+  }
 `;
 
 const Input = styled.input`
   padding-left: 10%;
   width: 50%;
+
+
 `;
+
 const Select = styled.select`
   padding-left: 10%;
   width: 61%;
   text-align: center;
+
 `;
 
 const StyledButton = styled.input`
@@ -75,6 +98,10 @@ const StyledButton = styled.input`
     border: 2px solid #e9c47b;
     cursor: pointer;
   }
+  @media ${device.mobile} {
+  margin : 1vh 0 ;
+}
+
 `;
 
 const place = [];
@@ -246,11 +273,11 @@ render(){
               <Input type="text" name="chariot" id="chariot" placeholder="Zeus 8" onChange={this.onChange} value={this.state.month_departure} />
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="char_image">User photo :</Label>
+              <Label htmlFor="char_image">Chariot Picture :</Label>
               <Input type="text" name="char_image" id="char_image" onChange={this.onChange} value={this.char_image}  />
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="profile_image">Chariot picture :</Label>
+              <Label htmlFor="profile_image">User photo :</Label>
               <Input type="text" name="profile_image" id="profile_image" onChange={this.onChange} value={this.profile_image} />
             </DivLabel>
             <StyledButton type="submit" value="Send" />

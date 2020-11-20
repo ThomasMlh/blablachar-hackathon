@@ -69,6 +69,7 @@ const Label = styled.label`
 const Input = styled.input`
   padding-left: 10%;
   width: 50%;
+  text-align: center;
 
 
 `;
@@ -231,7 +232,7 @@ render(){
             </DivLabel>
             <DivLabel>
               <Label htmlFor="day_departure">Choose Day :</Label>
-              <Select name="stday_departureart" id="day_departure" onChange={this.onChange} value={this.state.month_departure}>
+              <Select name="day_departure" id="day_departure" onChange={this.onChange} value={this.state.day_departure}>
                 {day}
               </Select>
             </DivLabel>
@@ -269,8 +270,8 @@ render(){
               </Select>
             </DivLabel>
             <DivLabel>
-              <Label htmlFor="chariot">Chariot :</Label>
-              <Input type="text" name="chariot" id="chariot" placeholder="Zeus 8" onChange={this.onChange} value={this.state.month_departure} />
+              <Label htmlFor="seats">Chariot :</Label>
+              <Input type="text" name="seats" id="seats" placeholder="Zeus 8" onChange={this.onChange} value={this.state.seats} />
             </DivLabel>
             <DivLabel>
               <Label htmlFor="char_image">Chariot Picture :</Label>

@@ -10,7 +10,7 @@ const GameCard=styled.figure`
     align-items: start;
     justify-content: space-around;
     padding: 1.25em;
-    width: 700px;
+    width: 90%;
     height: 280px;
     border: 1px solid #f8f8f8;
     border-radius: 1rem;
@@ -34,8 +34,8 @@ const GameCard=styled.figure`
 
 const Char=styled.img`
     display: flex;
-    width: auto;
-    height: 260px;
+    width: 40%;
+    height: 100%;
     border-radius: 1rem;
     border: solid 2px black;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -87,19 +87,6 @@ const Description=styled.div`
     font-size: 0.8em;
        }`;
 
-const Rating = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    padding: 10px 10px 10px 10px;
-    `;
-
-const RatingLinks = styled.a`
-  &:hover {
-    color: orange;
-    cursor: pointer;
-  }`;
-
 const StyledButton = styled.button`
     padding: 0 20px;
     border: none;
@@ -132,13 +119,6 @@ export default function CharriotCard ({id, model, horses, speed, rate, luggage, 
                         <p><strong>Top Speed on paved: </strong>{speed} km/h</p>
                         <p><strong>Luggage:</strong> {luggage}</p>
                         <StarIcon><FontAwesomeIcon icon={faStar}/>  rating {rate}</StarIcon>
-                        <Rating>
-                            <RatingLinks href="#5" title="Donner 5 étoiles">☆</RatingLinks>
-                            <RatingLinks href="#4" title="Donner 4 étoiles">☆</RatingLinks>
-                            <RatingLinks href="#3" title="Donner 3 étoiles">☆</RatingLinks>
-                            <RatingLinks href="#2" title="Donner 2 étoiles">☆</RatingLinks>
-                            <RatingLinks href="#1" title="Donner 1 étoile">☆</RatingLinks>
-                            </Rating>
                         <StyledButton id={id} onClick={handleClick}>Remove from my List</StyledButton>
                     </Description>       
                 </Col1>

@@ -276,10 +276,7 @@ export default function FrontPage({ profile }) {
           <Link
             to={{ pathname: `drivers/${profile.id}`, state: { info: profile } }}
           >
-            <ImageProfil
-              src={`https://still-ravine-63028.herokuapp.com${profile.profile_image[0].url}`}
-              alt="maximus"
-            />
+            <ImageProfil src={profile.profile_image} alt="maximus" />
           </Link>
           <Description>
             <Trajet>
@@ -316,10 +313,7 @@ export default function FrontPage({ profile }) {
                 </ChariotModel>
                 <Lugage>Luggage : {profile.luggage}</Lugage>
               </DetailCardContent>
-              <ImageChariot
-                src={`https://still-ravine-63028.herokuapp.com${profile.char_image[0].url}`}
-                alt="maximus"
-              />
+              <ImageChariot src={profile.char_image} alt="maximus" />
             </DetailsCard>
           </DetailsAlacon>
         ) : (

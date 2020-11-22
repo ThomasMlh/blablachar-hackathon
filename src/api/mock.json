@@ -1,0 +1,11 @@
+{
+  "name":"ds",
+  "char_model":"sd",
+  "departure":"sd",
+  "arrival":"sd",
+  "price":0,
+  "seats":0,
+  "luggage":0,
+  "day_departure":"",
+  "month_departure":"",
+  "char_image":[{"url":""}],"profile_image":[{"url":""}]}

@@ -262,6 +262,7 @@ const ImageChariot = styled.img`
 export default function FrontPage({ profile }) {
   const [favorite, setFavorite] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  
 
   const handleDetails = () => {
     setShowDetails(!showDetails);
@@ -270,13 +271,17 @@ export default function FrontPage({ profile }) {
     setFavorite(!favorite);
   };
   return (
+
     <PageTrip>
       <Card>
         <CardContent>
           <Link
             to={{ pathname: `drivers/${profile.id}`, state: { info: profile } }}
           >
-            <ImageProfil src={profile.profile_image} alt="maximus" />
+          <ImageProfil
+            src={profile.profile_image}
+            alt="name"/>
+
           </Link>
           <Description>
             <Trajet>
@@ -313,7 +318,10 @@ export default function FrontPage({ profile }) {
                 </ChariotModel>
                 <Lugage>Luggage : {profile.luggage}</Lugage>
               </DetailCardContent>
-              <ImageChariot src={profile.char_image} alt="maximus" />
+              <ImageChariot
+                src={profile.char_image}
+                alt="maximus"
+              />
             </DetailsCard>
           </DetailsAlacon>
         ) : (

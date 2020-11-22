@@ -73,7 +73,7 @@ const StyledUl = styled.ul`
   font-family: Cinzel Decorative;
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   width: 60vw;
   height: 20vh;
   background-color: #faeed1;

@@ -51,7 +51,7 @@ export const A = styled(Link)`
   }
 `;
 
-export const PLogo = styled.p`
+export const PLogo = styled.div`
   text-align: center;
   padding-top: 3vh;
   font-size: 10vh;

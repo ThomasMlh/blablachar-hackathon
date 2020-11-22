@@ -206,10 +206,7 @@ export default function Drivers() {
     <Component>
       <ProfilInfo>
         <UserMainInfo>
-          <UserImg
-            src={`https://still-ravine-63028.herokuapp.com${info.profile_image[0].url}`}
-            alt=""
-          />
+          <UserImg src={info.profile_image} alt="" />
           <UserDescr>
             <DriverName>{info.name}</DriverName>
             <p>

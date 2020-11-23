@@ -1,5 +1,4 @@
 import FrontPage from "./FrontPage";
-import FrontPage2 from "./FrontPage2";
 
 import styled from "styled-components";
 
@@ -173,7 +172,6 @@ const Safety = styled.img`
   }
 `;
 
-
 const ContainerTextSafety = styled.h2`
   transition: 0.5s ease;
   font-size: 1.9em;
@@ -229,12 +227,12 @@ const ListDrivers = ({ profile, tablo }) => {
         <ZoneChariot to="chariots">
           <ChariotType src="/photos/cartwheel.png" alt="Char"></ChariotType>
           <ContainerTextChariot>Chariots</ContainerTextChariot>
-        </ZoneChariot>  
+        </ZoneChariot>
         <ZoneSafety to="safety">
           <Safety
             src="/photos/hazard-sign.png"
-            alt="Safety instructions">
-          </Safety>
+            alt="Safety instructions"
+          ></Safety>
           <ContainerTextSafety>Safety instructions</ContainerTextSafety>
         </ZoneSafety>
       </FlexBoxHaut>
@@ -245,9 +243,6 @@ const ListDrivers = ({ profile, tablo }) => {
         <Warper>
           {profile.map((item) => (
             <FrontPage key={item.id} profile={item} />
-          ))}
-            {tablo.map((item) => (
-            <FrontPage2 key={item.name} profile={item} />
           ))}
         </Warper>
       </Fond>

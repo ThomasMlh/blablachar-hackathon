@@ -273,9 +273,7 @@ export default function FrontPage({ profile }) {
     <PageTrip>
       <Card>
         <CardContent>
-          <Link
-            to={{ pathname: `drivers/${profile.id}`, state: { info: profile } }}
-          >
+          <Link to={`drivers/${profile.id}`}>
             <ImageProfil src={profile.profile_image} alt="maximus" />
           </Link>
           <Description>

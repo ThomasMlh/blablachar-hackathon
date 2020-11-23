@@ -32,7 +32,7 @@ function App() {
 
       <Switch>
         <Route path="/post" component={() => <Form tablo={tablo} />} />
-        <Route path="/drivers" component={Drivers} />
+        <Route path="/drivers/:id" component={Drivers} />
         <Route path="/chariots" component={CharriotPage} />
         <Route path="/safety" component={Safety} />
         <Route path="/faq" component={Faq} />

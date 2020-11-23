@@ -1,4 +1,5 @@
-import { useLocation } from "react-router";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { device } from "./Device";
@@ -171,8 +172,21 @@ const StyledButton = styled.button`
 `;
 
 export default function Drivers() {
-  let location = useLocation();
-  const info = location.state.info;
+  const { id } = useParams();
+  const myId = id;
+  const [profileInfo, setProfileInfo] = useState([]);
+
+  const getUniqueProfile = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://still-ravine-63028.herokuapp.com/profiles/${myId}`
+      );
+      setProfileInfo(data);
+      return data;
+    } catch (error) {
+      return error;
+    }
+  };
 
   const [comment, setComment] = useState({
     name: "",
@@ -202,20 +216,24 @@ export default function Drivers() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    getUniqueProfile();
+  });
+
   return (
     <Component>
       <ProfilInfo>
         <UserMainInfo>
-          <UserImg src={info.profile_image} alt="" />
+          <UserImg src={profileInfo.profile_image} alt="" />
           <UserDescr>
-            <DriverName>{info.name}</DriverName>
+            <DriverName>{profileInfo.name}</DriverName>
             <p>
-              Rating : {info.rate} <span>&#11088;</span>
+              Rating : {profileInfo.rate} <span>&#11088;</span>
             </p>
-            <p>Chariot : {info.char_model}</p>
-            <p>Age : {info.age}</p>
-            <p>Trips made : {info.number_routes}</p>
-            <p>Trips achieved : {info.arrived_at_destination}</p>
+            <p>Chariot : {profileInfo.char_model}</p>
+            <p>Age : {profileInfo.age}</p>
+            <p>Trips made : {profileInfo.number_routes}</p>
+            <p>Trips achieved : {profileInfo.arrived_at_destination}</p>
           </UserDescr>
         </UserMainInfo>
         <UserSecondInfo>
@@ -228,7 +246,7 @@ export default function Drivers() {
           </BoxPersonality>
           <Description>
             <TitleDescr>Description</TitleDescr>
-            <TextDescr>{info.description}</TextDescr>
+            <TextDescr>{profileInfo.description}</TextDescr>
           </Description>
         </UserSecondInfo>
       </ProfilInfo>

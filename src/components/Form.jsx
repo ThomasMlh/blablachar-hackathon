@@ -144,18 +144,34 @@ export default class Form extends Component {
   }
 
   onChange = (e) => {
-    switch (e.target.name) {
-      default:
-        this.setState({
-          [e.target.name]: e.target.value,
-        });
-    }
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   };
 
   submitForm = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    this.props.tablo.push(this.state);
+    const config = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    };
+    const url = "https://still-ravine-63028.herokuapp.com/profiles";
+    fetch(url, config)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.error) {
+          alert(res.error);
+        } else {
+          alert(`Your profil has been successfully added!`);
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+        alert("There was an error when adding your profil.");
+      });
   };
 
   render() {
@@ -280,31 +296,25 @@ export default class Form extends Component {
               </DivLabel>
               <DivLabel>
                 <Label htmlFor="char_image">Chariot Picture :</Label>
-                <Select
+                <Input
                   type="text"
                   name="char_image"
                   id="char_image"
                   onChange={this.onChange}
                   value={this.state.char_image}
-                >
-                  <option value="https://still-ravine-63028.herokuapp.com/uploads/Dyonisos_50_8b5c45076c.jpg">
-                    Chariot 1
-                  </option>
-                </Select>
+                />
+
               </DivLabel>
               <DivLabel>
                 <Label htmlFor="profile_image">User photo :</Label>
-                <Select
-                  type="img"
+                <Input
+                  type="text"
                   name="profile_image"
                   id="profile_image"
                   onChange={this.onChange}
                   value={this.state.profile_image}
-                >
-                  <option value="https://still-ravine-63028.herokuapp.com/uploads/Joris_3f0cf76d67.jpeg">
-                    Joris
-                  </option>
-                </Select>
+                />
+               
               </DivLabel>
               <StyledButton type="submit" value="Send" />
             </fieldset>

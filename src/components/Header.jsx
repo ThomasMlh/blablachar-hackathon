@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { device } from "./Device";
 import { Link } from "react-router-dom";
 
-export const DivFix = styled.div``;
+export const DivFix = styled.div`
+  width: 100%;
+`;
 
 export const DivHeader = styled.div`
   background-color: #efdcbe;
@@ -11,21 +13,18 @@ export const DivHeader = styled.div`
   padding-top: 2vh;
   align-items: center;
   color: white;
-  font-size: 4vh;
+  font-size: 2.5em;
   text-shadow: 1px 1px 2px black;
-  height: 12vh;
+  height: 10vh;
   @media ${device.mobile} {
     height: 10vh;
     padding-top: 0;
-    font-size: 17px;
   }
 `;
 
 export const DivLogo = styled.div`
   display: flex;
-  padding-right: 18vw;
   @media ${device.mobile} {
-    padding-right: 0vw;
   }
 `;
 
@@ -47,18 +46,17 @@ export const A = styled(Link)`
   }
   @media ${device.mobile} {
     padding-right: 3vw;
-    font-size: 2.5vh;
+    font-size: 0.7em;
   }
 `;
 
 export const PLogo = styled.div`
   text-align: center;
   padding-top: 3vh;
-  font-size: 10vh;
-  padding-left: 2vh;
+  font-size: 1.5em;
+  padding-right: 10%;
   @media ${device.mobile} {
     display: none;
-    padding-top: 0;
   }
 `;
 export const PDescription = styled.p`

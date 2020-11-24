@@ -47,7 +47,7 @@ const ZonePostATrip = styled(Link)`
   border-radius: 20px;
   box-shadow: 3px 5px 3px #797474;
   display: block;
-  width: 30%;
+  width: 25%;
   height: 40%;
   transition: 0.5s ease;
   display: flex;
@@ -116,7 +116,7 @@ const ZoneChariot = styled(Link)`
   border-radius: 20px;
   box-shadow: 3px 5px 3px #797474;
   display: block;
-  width: 30%;
+  width: 25%;
   height: 40%;
   transition: 0.5s ease;
   display: flex;
@@ -141,7 +141,7 @@ const ZoneSafety = styled(Link)`
   border-radius: 20px;
   box-shadow: 3px 5px 3px #797474;
   display: block;
-  width: 30%;
+  width: 25%;
   height: 40%;
   transition: 0.5s ease;
   display: flex;
@@ -165,7 +165,6 @@ const ZoneSafety = styled(Link)`
 const Safety = styled.img`
   width: 30%;
   height: 40%;
-  padding-left: 1vw;
   @media ${device.mobile} {
     width: 20%;
     height: 10%;
@@ -174,10 +173,12 @@ const Safety = styled.img`
 
 const ContainerTextSafety = styled.h2`
   transition: 0.5s ease;
+  width: 70%;
   font-size: 1.9em;
   margin-top: auto;
   margin-bottom: auto;
   color: black;
+  font-size: 1.4em;
   font-family: Cinzel decorative;
   @media ${device.mobile} {
     font-size: 1.2em;
@@ -215,7 +216,7 @@ const Trait1 = styled.div`
   z-index: 5;
 `;
 
-const ListDrivers = ({ profile, tablo }) => {
+const ListDrivers = ({ profile }) => {
   return (
     <div>
       <ImageDuHaut src="/photos/charTableau.jpg" alt="Course de char" />

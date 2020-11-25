@@ -173,6 +173,7 @@ const StyledButton = styled.button`
 
 export default function Drivers() {
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
   const myId = id;
   const [profileInfo, setProfileInfo] = useState([]);
 
@@ -182,6 +183,7 @@ export default function Drivers() {
         `https://still-ravine-63028.herokuapp.com/profiles/${myId}`
       );
       setProfileInfo(data);
+      setLoading(!loading);
       return data;
     } catch (error) {
       return error;
@@ -193,7 +195,7 @@ export default function Drivers() {
     comment: "",
   });
 
-  const [comments, setComments] = useState([]);
+  const [coms, setComments] = useState([]);
 
   const handleChange = (e) => {
     setComment({ ...comment, [e.target.id]: e.target.value });
@@ -203,9 +205,9 @@ export default function Drivers() {
     e.preventDefault();
     localStorage.setItem(
       "myValueInLocalStorage",
-      JSON.stringify([...comments, comment])
+      JSON.stringify([...coms, comment])
     );
-    setComments([...comments, comment]);
+    setComments([...coms, comment]);
   };
 
   useEffect(() => {
@@ -252,13 +254,22 @@ export default function Drivers() {
       </ProfilInfo>
       <Title>Comments</Title>
       <Comments>
-        {comments.map((comm) => {
+        {coms.map((comm) => {
           return (
-            <Com>
+            <Com key={comm.name}>
               {comm.comment} - {comm.name}
             </Com>
           );
         })}
+        {loading
+          ? profileInfo.comments.map((com) => {
+              return (
+                <Com key={com.author}>
+                  {com.com} - {com.author}
+                </Com>
+              );
+            })
+          : ""}
       </Comments>
       <div>
         <SndTitle>Leave a comment</SndTitle>

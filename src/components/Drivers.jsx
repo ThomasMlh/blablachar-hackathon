@@ -218,7 +218,7 @@ export default function Drivers() {
 
   useEffect(() => {
     getUniqueProfile();
-  });
+  }, []);
 
   return (
     <Component>

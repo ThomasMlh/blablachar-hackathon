@@ -40,6 +40,7 @@ export const A = styled(Link)`
   text-decoration: none;
   padding-right: 3vw;
   color: white;
+  font-family: "Caesar Dressing";
   &:hover {
     color: black;
     transition: 0.6s;
@@ -55,13 +56,15 @@ export const PLogo = styled.div`
   padding-top: 3vh;
   font-size: 1.5em;
   padding-right: 10%;
+  font-family: "Caesar Dressing";
   @media ${device.mobile} {
     display: none;
   }
 `;
 export const PDescription = styled.p`
   text-align: center;
-  font-size: 25px;
+  font-size: 0.25em;
+  font-family: "Cinzel decorative";
   @media ${device.mobile} {
     display: none;
   }

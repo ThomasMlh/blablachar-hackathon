@@ -20,6 +20,8 @@ const DivFooter = styled.div`
 const A = styled(Link)`
   text-decoration: none;
   color: white;
+  font-family: "Caesar Dressing";
+  font-size: 1.3em;
   &:hover {
     color: black;
     transition: 0.6s;
@@ -29,6 +31,8 @@ const A = styled(Link)`
 const Alink = styled.a`
   text-decoration: none;
   color: white;
+  font-family: "Caesar Dressing";
+  font-size: 1.3em;
   &:hover {
     color: black;
     transition: 0.6s;
